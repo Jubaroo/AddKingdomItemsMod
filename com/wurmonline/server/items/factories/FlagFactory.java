@@ -1,7 +1,6 @@
 package com.wurmonline.server.items.factories;
 
 import com.wurmonline.server.items.KingdomFlag;
-import com.wurmonline.server.items.KingdomWagon;
 import org.takino.mods.AddKingdomItems;
 
 import java.util.ArrayList;
