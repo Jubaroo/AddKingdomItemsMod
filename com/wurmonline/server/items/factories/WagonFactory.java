@@ -12,8 +12,6 @@ public class WagonFactory {
 
     public static ArrayList<Integer> wagonList = new ArrayList<>();
 
-
-
     public static void addAllWagons() {
         for (int i=0; i < Constants.WAGON_LIST.length; i++) {
             int id= KingdomWagon.addWagon(Constants.WAGON_LIST[i],Constants.NAMES[i]);

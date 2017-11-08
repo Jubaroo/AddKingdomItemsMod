@@ -9,7 +9,8 @@ import java.util.ArrayList;
  * Creates every flag.
  */
 public class FlagFactory {
-    public static ArrayList<Integer> flagList = new ArrayList<>();
+
+    private static ArrayList<Integer> flagList = new ArrayList<>();
 
     public static void addAllFlags() {
         for (int i=0; i < Constants.FLAG_LIST.length; i++) {

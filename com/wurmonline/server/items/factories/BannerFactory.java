@@ -9,7 +9,9 @@ import java.util.ArrayList;
  * Creates all kinds of Banners.
  */
 public class BannerFactory {
-    public static ArrayList<Integer> bannerList = new ArrayList<>();
+
+    private static ArrayList<Integer> bannerList = new ArrayList<>();
+
     public static void addAllBanners() {
         for (int i=0; i < Constants.BANNER_LIST.length; i++) {
             int id = KingdomBanner.addBanner(Constants.BANNER_LIST[i],Constants.NAMES[i],false);

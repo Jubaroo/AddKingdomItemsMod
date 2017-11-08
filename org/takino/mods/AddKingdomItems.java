@@ -6,6 +6,7 @@ import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.items.Item;
 import com.wurmonline.server.items.factories.BannerFactory;
 import com.wurmonline.server.items.factories.FlagFactory;
+import com.wurmonline.server.items.factories.TowerFactory;
 import com.wurmonline.server.items.factories.WagonFactory;
 import javassist.CtClass;
 import javassist.CtPrimitiveType;
@@ -26,20 +27,19 @@ import java.util.logging.Logger;
 /**
  * Adds various kingdom items.
  */
+
 public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplatesCreatedListener {
 
     private boolean wagons;
-
-    private boolean tabards;
     private boolean towers;
     private boolean flags;
 
     private static boolean debug;
     private static Logger logger = Logger.getLogger(AddKingdomItems.class.getName());
+
     @Override
     public void configure(Properties properties) {
         wagons = Boolean.valueOf(properties.getProperty("wagons"));
-        tabards = Boolean.valueOf(properties.getProperty("tabards"));
         flags = Boolean.valueOf(properties.getProperty("flags"));
         towers = Boolean.valueOf(properties.getProperty("towers"));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(true)));
@@ -51,13 +51,11 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
         }
     }
 
-
     private void registerManageHook() {
         try {
             CtClass[] input = {
                 HookManager.getInstance().getClassPool().get("com.wurmonline.server.creatures.Creature"),
                 HookManager.getInstance().getClassPool().get("com.wurmonline.server.items.Item")
-
             };
             CtClass output = HookManager.getInstance().getClassPool().get("java.util.List");
 
@@ -100,13 +98,11 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
         }
     }
 
-
     private void registerWagonHook() {
         try {
             CtClass[] input = {
                     HookManager.getInstance().getClassPool().get("com.wurmonline.server.items.Item"),
                     HookManager.getInstance().getClassPool().get("com.wurmonline.server.behaviours.Vehicle")
-
             };
             CtClass output = CtPrimitiveType.voidType;
             HookManager.getInstance().registerHook("com.wurmonline.server.behaviours.Vehicles", "setSettingsForVehicle",
@@ -176,10 +172,7 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
 
     @Override
     public void init() {
-
-
     }
-
 
     public static void debug(String msg) {
         if (debug) {
@@ -191,6 +184,9 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
     public void onItemTemplatesCreated() {
         if (wagons) {
             WagonFactory.addAllWagons();
+        }
+        if (towers) {
+            TowerFactory.addAllTowers();
         }
         if (flags) {
             BannerFactory.addAllBanners();

@@ -10,6 +10,7 @@ import java.io.IOException;
  * Add all banners.
  */
 public class KingdomBanner {
+
     public static int addBanner(String model, String name, boolean tall) {
         AddKingdomItems.debug("Initing KingdomWagon " + model);
         try {
@@ -20,7 +21,7 @@ public class KingdomBanner {
         return 0;
     }
 
-    public static int createItem(String model, String name, boolean tall) throws IOException {
+    private static int createItem(String model, String name, boolean tall) throws IOException {
         String itemId = "org.takino.banner.";
         if (tall) {
             itemId+="tall.";
@@ -33,8 +34,8 @@ public class KingdomBanner {
         builder.name(name + add + " banner", name + add + " banners", "An elegant symbol of allegiance and faith towards " + name);
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{(short) 24, (short) 92, (short) 147,
-                (short) 51, (short) 52, (short) 109, (short) 48, (short) 86,
-                (short) 119, (short) 44, (short) 199, (short) 173});
+        (short) 51, (short) 52, (short) 109, (short) 48, (short) 86,
+        (short) 119, (short) 44, (short) 199, (short) 173});
         builder.imageNumber((short) 640);
         builder.combatDamage(0);
         builder.decayTime(9072000L);
@@ -48,7 +49,6 @@ public class KingdomBanner {
         builder.isTraded(true);
         builder.armourType(-1);
         builder.behaviourType((short)1);
-
         ItemTemplate result = builder.build();
         createCreationEntry(result);
         return result.getTemplateId();
@@ -56,6 +56,6 @@ public class KingdomBanner {
 
     private static void createCreationEntry(ItemTemplate newBanner) {
         CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(),
-                true, true, 0.0F, false, false, CreationCategories.FLAGS);
+        true, true, 0.0F, false, false, CreationCategories.FLAGS);
     }
 }
