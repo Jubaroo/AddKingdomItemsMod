@@ -9,23 +9,23 @@ import java.io.IOException;
 /**
  * Add all tents.
  */
-public class KingdomTent {
+public class KingdomMilitaryTent {
+
     public static int addTent(String model, String name) {
+        AddKingdomItems.debug("Initiating Kingdom Tent " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initiatiation of tent failed: " + e.toString());
+            AddKingdomItems.debug("Initialization of tent failed: " + e.toString());
         }
         return 0;
     }
 
     private static int createItem(String model, String name) throws IOException {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.military.tent." + name);
-        builder.name(name + " military tent", name + " military tents", "This is the standard tent for "+name+" military actions.");
+        builder.name(name + " military tent", name + " military tents", "This is the standard tent for " + name + " military actions.");
         builder.descriptions("excellent", "good", "ok", "poor");
-        builder.itemTypes(new short[]{(short) 24, (short) 1, (short) 47,
-                (short) 181, (short) 109, (short) 117, (short) 52, (short) 86,
-                (short) 98, (short) 180});
+        builder.itemTypes(new short[]{(short) 24, (short) 1, (short) 47, (short) 181, (short) 109, (short) 117, (short) 52, (short) 86, (short) 98, (short) 180});
         builder.imageNumber((short) 640);
         builder.combatDamage(0);
         builder.decayTime(3024000L);
