@@ -4,10 +4,7 @@ import com.wurmonline.server.Features;
 import com.wurmonline.server.behaviours.*;
 import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.items.Item;
-import com.wurmonline.server.items.factories.BannerFactory;
-import com.wurmonline.server.items.factories.FlagFactory;
-import com.wurmonline.server.items.factories.TowerFactory;
-import com.wurmonline.server.items.factories.WagonFactory;
+import com.wurmonline.server.items.factories.*;
 import javassist.CtClass;
 import javassist.CtPrimitiveType;
 import javassist.NotFoundException;
@@ -33,7 +30,8 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
     private boolean wagons;
     private boolean towers;
     private boolean flags;
-
+    private boolean tents;
+    private boolean pavilions;
     private static boolean debug;
     private static Logger logger = Logger.getLogger(AddKingdomItems.class.getName());
 
@@ -42,6 +40,8 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
         wagons = Boolean.valueOf(properties.getProperty("wagons"));
         flags = Boolean.valueOf(properties.getProperty("flags"));
         towers = Boolean.valueOf(properties.getProperty("towers"));
+        tents = Boolean.valueOf(properties.getProperty("tents"));
+        pavilions = Boolean.valueOf(properties.getProperty("pavilions"));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(true)));
         debug("Wagons: " + wagons);
         if (wagons) {
@@ -187,6 +187,12 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
         }
         if (towers) {
             TowerFactory.addAllTowers();
+        }
+        if (tents) {
+            TentFactory.addAllTents();
+        }
+        if (pavilions) {
+            PavilionFactory.addAllPavilions();
         }
         if (flags) {
             BannerFactory.addAllBanners();

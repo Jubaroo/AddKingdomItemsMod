@@ -12,7 +12,6 @@ import java.io.IOException;
 public class KingdomTower {
 
     public static int addTower(String model, String name) {
-        AddKingdomItems.debug("Initing KingdomTower " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
@@ -23,7 +22,7 @@ public class KingdomTower {
 
     private static int createItem(String model, String name) throws IOException {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.tower." + name);
-        builder.name(name + " tower", name + " towers", "A high guard tower.");
+        builder.name(name + " tower", name + " tower", "A high guard tower.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{(short) 52, (short) 25, (short) 31,
                 (short) 67, (short) 44, (short) 85, (short) 86, (short) 49,

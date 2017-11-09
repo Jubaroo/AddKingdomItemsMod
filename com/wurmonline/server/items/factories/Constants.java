@@ -88,24 +88,64 @@ public class Constants {
     };
 
     static final String[] TOWER_LIST = {
-            "model.structure.guardtower.hots", // Jenn-Kellon
+            "model.structure.guardtower.jenn", // Jenn-Kellon
             "model.structure.guardtower.molr", // Mol-Rehan
-            "model.structure.guardtower.free", // Horde of the Summoned
-            //"model.decoration.banner.zjen", // Dragon Kingdom
-            //"model.decoration.banner.empi", // Empire of Mol-Rehan
-            //"model.decoration.banner.blac", // Black Legion
-            //"model.decoration.banner.ebon", // Ebonaura
-            //"model.decoration.banner.king", // Kingdom of Sol
-            //"model.decoration.banner.ther", // The Roman Republic
-            //"model.decoration.banner.valh", // Valhalla Descendants
-            //"model.decoration.banner.mace", // Macedonia
-            //"model.decoration.banner.drea", // Dreadnought
-            //"model.decoration.banner.thec", // The Crusaders
-            //"model.decoration.banner.pand", // Pandemonium
+            "model.structure.guardtower.hots", // Horde of the Summoned
+            //"", // Dragon Kingdom
+            //"", // Empire of Mol-Rehan
+            //"", // Black Legion
+            //"", // Ebonaura
+            //"", // Kingdom of Sol
+            //"", // The Roman Republic
+            //"", // Valhalla Descendants
+            //"", // Macedonia
+            //"", // Dreadnought
+            //"", // The Crusaders
+            //"", // Pandemonium
+            //"", Wurm University
+            //"" Valhalla II
+    };
+
+    static final String[] TENT_LIST = {
+            "model.structure.tent.military.cotton.jenn", // Jenn-Kellon
+            "model.structure.tent.military.cotton.molr", // Mol-Rehan
+            "model.structure.tent.military.cotton.hots", // Horde of the Summoned
+            "model.structure.tent.military.cotton.zjen", // Dragon Kingdom
+            "model.structure.tent.military.cotton.empi", // Empire of Mol-Rehan
+            "", // Black Legion
+            "", // Ebonaura
+            "", // Kingdom of Sol
+            "", // The Roman Republic
+            "", // Valhalla Descendants
+            "", // Macedonia
+            "model.structure.tent.military.cotton.drea", // Dreadnought
+            "model.structure.tent.military.cotton.thec", // The Crusaders
+            "model.structure.tent.military.cotton.pand", // Pandemonium
+            //"", //Wurm University
+            //"" //Valhalla II
+    };
+
+    static final String[] PAVILION_LIST = {
+            "model.structure.tent.pavilion.cotton.jenn", // Jenn-Kellon
+            "model.structure.tent.pavilion.cotton.molr", // Mol-Rehan
+            "model.structure.tent.pavilion.cotton.hots", // Horde of the Summoned
+            //"", // Dragon Kingdom
+            //"", // Empire of Mol-Rehan
+            //"", // Black Legion
+            //"", // Ebonaura
+            //"", // Kingdom of Sol
+            //"", // The Roman Republic
+            //"", // Valhalla Descendants
+            //"", // Macedonia
+            //"", // Dreadnought
+            //"", // The Crusaders
+            //"", // Pandemonium
             //"", Wurm University
             //"" Valhalla II
     };
 
     public static byte BIRCHWOOD = (byte)14;
     public static byte STONE = (byte)15;
+    public static byte COTTON = (byte)17;
+
 }
