@@ -21,7 +21,7 @@ public class KingdomPavilion {
 
     private static int createItem(String model, String name) throws IOException {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.pavilion." + name);
-        builder.name(name + " military pavilion", name + " military pavilions", "A high guard pavilion.");
+        builder.name(name + " pavilion", name + " pavilions", "A pleasant open air tent designed for various kinds of "+name+" gatherings.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{(short) 24, (short) 47, (short) 109,
                 (short) 52, (short) 86, (short) 51, (short) 98, (short) 180,
