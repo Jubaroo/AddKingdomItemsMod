@@ -21,6 +21,5 @@ public class WagonFactory {
                 AddKingdomItems.debug(Constants.NAMES[i] + " wagon - cant' be created, id is 0");
             }
         }
-
     }
 }

@@ -14,7 +14,7 @@ public class BannerFactory {
 
     public static void addAllBanners() {
         for (int i=0; i < Constants.BANNER_LIST.length; i++) {
-            int id = KingdomBanner.addBanner(Constants.BANNER_LIST[i],Constants.NAMES[i],false);
+            int id= KingdomBanner.addBanner(Constants.BANNER_LIST[i],Constants.NAMES[i],false);
             if (id!=0) {
                 bannerList.add(id);
             } else {
@@ -25,7 +25,7 @@ public class BannerFactory {
                 if (id != 0) {
                     bannerList.add(id);
                 } else {
-                    AddKingdomItems.debug(Constants.NAMES[i] + " banner - cant' be created, id is 0");
+                    AddKingdomItems.debug(Constants.NAMES[i] + " tall banner - cant' be created, id is 0");
                 }
             }
         }

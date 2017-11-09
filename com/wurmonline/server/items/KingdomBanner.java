@@ -12,11 +12,11 @@ import java.io.IOException;
 public class KingdomBanner {
 
     public static int addBanner(String model, String name, boolean tall) {
-        AddKingdomItems.debug("Initing KingdomWagon " + model);
+        AddKingdomItems.debug("Initiating Kingdom Banner " + model);
         try {
             return createItem(model, name, tall);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initiatiation of wagon failed: " + e.toString());
+            AddKingdomItems.debug("Initialization of banner failed: " + e.toString());
         }
         return 0;
     }
@@ -33,9 +33,7 @@ public class KingdomBanner {
         }
         builder.name(name + add + " banner", name + add + " banners", "An elegant symbol of allegiance and faith towards " + name);
         builder.descriptions("excellent", "good", "ok", "poor");
-        builder.itemTypes(new short[]{(short) 24, (short) 92, (short) 147,
-        (short) 51, (short) 52, (short) 109, (short) 48, (short) 86,
-        (short) 119, (short) 44, (short) 199, (short) 173});
+        builder.itemTypes(new short[]{(short) 24, (short) 92, (short) 147, (short) 51, (short) 52, (short) 109, (short) 48, (short) 86, (short) 119, (short) 44, (short) 199, (short) 173});
         builder.imageNumber((short) 640);
         builder.combatDamage(0);
         builder.decayTime(9072000L);
@@ -51,6 +49,7 @@ public class KingdomBanner {
         builder.behaviourType((short)1);
         ItemTemplate result = builder.build();
         createCreationEntry(result);
+
         return result.getTemplateId();
     }
 

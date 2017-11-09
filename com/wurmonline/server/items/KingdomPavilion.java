@@ -10,11 +10,13 @@ import java.io.IOException;
  * Add all pavilions.
  */
 public class KingdomPavilion {
+
     public static int addPavilion(String model, String name) {
+        AddKingdomItems.debug("Initiating Kingdom Pavilion " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initiatiation of pavilion failed: " + e.toString());
+            AddKingdomItems.debug("Initialization of pavilion failed: " + e.toString());
         }
         return 0;
     }

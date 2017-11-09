@@ -12,10 +12,11 @@ import java.io.IOException;
 public class KingdomFlag {
 
     public static int addFlag(String model, String name) {
+        AddKingdomItems.debug("Initiating Kingdom Flag " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initiatiation of wagon failed: " + e.toString());
+            AddKingdomItems.debug("Initialization of wagon failed: " + e.toString());
         }
         return 0;
     }

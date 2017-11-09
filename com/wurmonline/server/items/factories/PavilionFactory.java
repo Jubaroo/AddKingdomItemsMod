@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * Creates all kinds of pavilions.
  */
 public class PavilionFactory {
+
     private static ArrayList<Integer> pavilionList = new ArrayList<>();
 
     public static void addAllPavilions() {

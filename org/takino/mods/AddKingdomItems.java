@@ -32,6 +32,7 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
     private boolean flags;
     private boolean tents;
     private boolean pavilions;
+    private boolean banners;
     private static boolean debug;
     private static Logger logger = Logger.getLogger(AddKingdomItems.class.getName());
 
@@ -41,6 +42,7 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
         flags = Boolean.valueOf(properties.getProperty("flags"));
         towers = Boolean.valueOf(properties.getProperty("towers"));
         tents = Boolean.valueOf(properties.getProperty("tents"));
+        banners = Boolean.valueOf(properties.getProperty("banners"));
         pavilions = Boolean.valueOf(properties.getProperty("pavilions"));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(true)));
         debug("Wagons: " + wagons);
@@ -189,14 +191,16 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
             TowerFactory.addAllTowers();
         }
         if (tents) {
-            TentFactory.addAllTents();
+            MilitaryTentFactory.addAllTents();
         }
         if (pavilions) {
             PavilionFactory.addAllPavilions();
         }
         if (flags) {
-            BannerFactory.addAllBanners();
             FlagFactory.addAllFlags();
+        }
+        if (banners) {
+            BannerFactory.addAllBanners();
         }
     }
 }

@@ -24,12 +24,6 @@ public class Constants {
             "model.transports.medium.wagon.yval"  // Valhalla II
     };
 
-    static final String[] NAMES = {
-            "Jenn-Kellon", "Mol-Rehan", "Horde of the Summoned", "Dragon Kingdom", "Empire of Mol-Rehan", "Black Legion", "Ebonaura",
-            "Kingdom of Sol", "The Roman Republic", "Valhalla Descendants", "Macedonia", "Dreadnought", "The Crusaders",
-            "Pandemonium", "Wurm University", "Valhalla II"
-    };
-
     static final String[] BANNER_LIST = {
             "model.decoration.banner.jenn", // Jenn-Kellon
             "model.decoration.banner.molr", // Mol-Rehan
@@ -45,8 +39,6 @@ public class Constants {
             "model.decoration.banner.drea", // Dreadnought
             "model.decoration.banner.thec", // The Crusaders
             "model.decoration.banner.pand", // Pandemonium
-            //"", // Wurm University
-            //"" // Valhalla II
     };
 
     static final String[] BANNER_TALL_LIST = {
@@ -64,8 +56,6 @@ public class Constants {
             "model.decoration.tallbanner.drea", // Dreadnought
             "model.decoration.tallbanner.thec", // The Crusaders
             "model.decoration.tallbanner.pand", // Pandemonium
-            //"", // Wurm University
-            //"" // Valhalla II
     };
     
     static final String[] FLAG_LIST = {
@@ -83,65 +73,39 @@ public class Constants {
             "model.decoration.flag.drea", // Dreadnought
             "model.decoration.flag.thec", // The Crusaders
             "model.decoration.flag.pand", // Pandemonium
-            //"", // Wurm University
-            //"" // Valhalla II
     };
 
     static final String[] TOWER_LIST = {
             "model.structure.guardtower.jenn", // Jenn-Kellon
             "model.structure.guardtower.molr", // Mol-Rehan
             "model.structure.guardtower.hots", // Horde of the Summoned
-            //"", // Dragon Kingdom
-            //"", // Empire of Mol-Rehan
-            //"", // Black Legion
-            //"", // Ebonaura
-            //"", // Kingdom of Sol
-            //"", // The Roman Republic
-            //"", // Valhalla Descendants
-            //"", // Macedonia
-            //"", // Dreadnought
-            //"", // The Crusaders
-            //"", // Pandemonium
-            //"", Wurm University
-            //"" Valhalla II
     };
 
     static final String[] TENT_LIST = {
             "model.structure.tent.military.cotton.jenn", // Jenn-Kellon
             "model.structure.tent.military.cotton.molr", // Mol-Rehan
             "model.structure.tent.military.cotton.hots", // Horde of the Summoned
-            "model.structure.tent.military.cotton.zjen", // Dragon Kingdom
             "model.structure.tent.military.cotton.empi", // Empire of Mol-Rehan
-            "", // Black Legion
-            "", // Ebonaura
-            "", // Kingdom of Sol
-            "", // The Roman Republic
-            "", // Valhalla Descendants
-            "", // Macedonia
             "model.structure.tent.military.cotton.drea", // Dreadnought
             "model.structure.tent.military.cotton.thec", // The Crusaders
             "model.structure.tent.military.cotton.pand", // Pandemonium
-            //"", //Wurm University
-            //"" //Valhalla II
     };
 
     static final String[] PAVILION_LIST = {
             "model.structure.tent.pavilion.cotton.jenn", // Jenn-Kellon
             "model.structure.tent.pavilion.cotton.molr", // Mol-Rehan
             "model.structure.tent.pavilion.cotton.hots", // Horde of the Summoned
-            //"", // Dragon Kingdom
-            //"", // Empire of Mol-Rehan
-            //"", // Black Legion
-            //"", // Ebonaura
-            //"", // Kingdom of Sol
-            //"", // The Roman Republic
-            //"", // Valhalla Descendants
-            //"", // Macedonia
-            //"", // Dreadnought
-            //"", // The Crusaders
-            //"", // Pandemonium
-            //"", Wurm University
-            //"" Valhalla II
+    };
+
+    static final String[] NAMES = {
+            "Jenn-Kellon", "Mol-Rehan", "Horde of the Summoned", "Dragon Kingdom", "Empire of Mol-Rehan", "Black Legion", "Ebonaura",
+            "Kingdom of Sol", "The Roman Republic", "Valhalla Descendants", "Macedonia", "Dreadnought", "The Crusaders",
+            "Pandemonium", "Wurm University", "Valhalla II"
+    };
+
+    static final String[] MILITARY_TENT_NAMES = {
+            "Jenn-Kellon", "Mol-Rehan", "Horde of the Summoned", "Empire of Mol-Rehan", "Dreadnought", "The Crusaders",
+            "Pandemonium"
     };
 
     public static byte BIRCHWOOD = (byte)14;

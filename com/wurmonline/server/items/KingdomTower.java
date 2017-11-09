@@ -12,10 +12,11 @@ import java.io.IOException;
 public class KingdomTower {
 
     public static int addTower(String model, String name) {
+        AddKingdomItems.debug("Initiating Kingdom Tower " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initiatiation of tower failed: " + e.toString());
+            AddKingdomItems.debug("Initialization of tower failed: " + e.toString());
         }
         return 0;
     }

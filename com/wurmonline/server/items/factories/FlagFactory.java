@@ -21,6 +21,5 @@ public class FlagFactory {
                 AddKingdomItems.debug(Constants.NAMES[i] + " flag - cant' be created, id is 0");
             }
         }
-
     }
 }
