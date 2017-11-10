@@ -20,7 +20,17 @@ public class KingdomWagon {
         }
         return 0;
     }
-
+/*
+        createItemTemplate(850, 3, "wagon", "wagons",
+        "almost full", "somewhat occupied", "half-full", "emptyish",
+        "A fairly large wagon designed to be dragged by four animals.",
+        new short[]{108, 1, 31, 21, 51, 52, 44, 117, 193, 134, 47, 48, 176, 180, 160, 54},
+        (short)60, (short)41, 0, 9072000L, 550, 300, 410, -10,
+        MiscConstants.EMPTY_BYTE_PRIMITIVE_ARRAY,
+        "model.transports.medium.wagon.",
+        70.0F, 240000, (byte)14, 50000, true, -1, 0)
+        .setContainerSize(200, 260, 400);
+ */
     private static int createItem(String model, String name) throws IOException {
         AddKingdomItems.debug("id :  org.takino.wagon." + name);
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.wagon." + name);
@@ -40,7 +50,7 @@ public class KingdomWagon {
         builder.difficulty(70.0F);
         builder.weightGrams(240000);
         builder.material(Constants.BIRCHWOOD);
-        builder.value('썐'); //?? same thing is set for wagon in CreationEntryCreator..
+        builder.value('썐');
         builder.isTraded(false);
         builder.armourType(-1);
         builder.behaviourType((short) 41);

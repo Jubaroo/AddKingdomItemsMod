@@ -116,6 +116,43 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
                                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                                     debug("Adding vehicle configuration for wagons");
                                     Item item = (Item) args[0];
+/*
+            } else if (item.getTemplateId() == 850) {
+            if (Feature.WAGON_PASSENGER.isEnabled()) {
+                vehicle.createPassengerSeats(1);
+            } else {
+                vehicle.createPassengerSeats(0);
+            }
+
+            vehicle.pilotName = "driver";
+            vehicle.creature = false;
+            vehicle.embarkString = "ride";
+            vehicle.name = item.getName();
+            vehicle.setSeatFightMod(0, 0.9F, 0.3F);
+            vehicle.setSeatOffset(0, 0.0F, 0.0F, 0.0F, 1.453F);
+            if (Feature.WAGON_PASSENGER.isEnabled()) {
+                vehicle.setSeatFightMod(1, 1.0F, 0.4F);
+                vehicle.setSeatOffset(1, 4.05F, 0.0F, 0.84F);
+            }
+
+            vehicle.maxHeightDiff = 0.04F;
+            vehicle.maxDepth = -0.7F;
+            vehicle.skillNeeded = 21.0F;
+            vehicle.setMaxSpeed(0.7F);
+            vehicle.commandType = 2;
+            hitches = new Seat[]{new Seat((byte)2), new Seat((byte)2), new Seat((byte)2), new Seat((byte)2)};
+            hitches[0].offx = -2.0F;
+            hitches[0].offy = -1.0F;
+            hitches[1].offx = -2.0F;
+            hitches[1].offy = 1.0F;
+            hitches[2].offx = -5.0F;
+            hitches[2].offy = -1.0F;
+            hitches[3].offx = -5.0F;
+            hitches[3].offy = 1.0F;
+            vehicle.addHitchSeats(hitches);
+            vehicle.setMaxAllowedLoadDistance(4);
+
+                                     */
                                     int templateId = item.getTemplateId();
                                     for (int i: WagonFactory.wagonList) {
                                         if (i==templateId) {
@@ -153,10 +190,10 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
                                             hitches[3].offy = 1.0F;
                                             vehicle.addHitchSeats(hitches);
                                             vehicle.setMaxAllowedLoadDistance(4);
-                                            BehaviourAccessor.setMaxSpeed(vehicle,1.2f);
-                                            BehaviourAccessor.setMaxDepth(vehicle, -1.5f);
-                                            BehaviourAccessor.setMaxHeight(vehicle,2500.0f);
-                                            BehaviourAccessor.setMaxHeightDiff(vehicle,0.06f);
+                                            BehaviourAccessor.setMaxSpeed(vehicle,0.7F);
+                                            BehaviourAccessor.setMaxDepth(vehicle, -0.7F);
+                                            //BehaviourAccessor.setMaxHeight(vehicle,-2.0F);
+                                            BehaviourAccessor.setMaxHeightDiff(vehicle,0.04F);
                                             return null;
                                         }
                                     }

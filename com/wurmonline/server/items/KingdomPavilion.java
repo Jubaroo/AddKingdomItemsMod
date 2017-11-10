@@ -21,6 +21,14 @@ public class KingdomPavilion {
         return 0;
     }
 
+    /*
+createItemTemplate(865, "pavilion", "pavilions", "excellent", "good", "ok", "poor",
+"A pleasant open air tent designed for various kinds of gatherings.",
+new short[]{24, 47, 109, 52, 86, 51, 98, 180, 182},
+(short)640, (short)1, 0, 3024000L, 5, 5, 100, -10,
+MiscConstants.EMPTY_BYTE_PRIMITIVE_ARRAY, "model.structure.tent.pavilion.",
+10.0F, 2500, (byte)17, 1, false).setContainerSize(100, 200, 201);
+     */
     private static int createItem(String model, String name) throws IOException {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.pavilion." + name);
         builder.name(name + " pavilion", name + " pavilions", "A pleasant open air tent designed for various kinds of "+name+" gatherings.");
@@ -41,6 +49,7 @@ public class KingdomPavilion {
         builder.isTraded(false);
         builder.armourType(-1);
         builder.behaviourType((short)1);
+        builder.containerSize(100, 200, 201);
         ItemTemplate result = builder.build();
         createCreationEntry(result);
 
