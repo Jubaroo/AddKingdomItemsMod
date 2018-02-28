@@ -2,7 +2,7 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.items.factories.Constants;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.takino.mods.AddKingdomItems;
+import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ public class KingdomBanner {
     }
 
     private static int createItem(String model, String name, boolean tall) throws IOException {
-        String itemId = "org.takino.banner.";
+        String itemId = "org.kingdom.banner.";
         if (tall) {
             itemId+="tall.";
         }

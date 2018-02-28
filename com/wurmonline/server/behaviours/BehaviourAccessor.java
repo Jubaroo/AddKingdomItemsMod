@@ -14,12 +14,12 @@ public class BehaviourAccessor {
     public static void setMaxDepth(Vehicle v, float depth) {
         v.setMaxDepth(depth);
     }
-    //public static void setMaxHeight(Vehicle v, float height) {
-    //    v.setMaxHeight(height);
-    //}
-    //public static void setSkillNeeded(Vehicle v, float skill) {
-    //    v.setSkillNeeded(skill);
-    //}
+    public static void setMaxHeight(Vehicle v, float height) {
+        v.setMaxHeight(height);
+    }
+    public static void setSkillNeeded(Vehicle v, float skill) {
+        v.setSkillNeeded(skill);
+    }
     public static void setMaxHeightDiff(Vehicle v, float heightdiff){
         v.setMaxHeightDiff(heightdiff);
     }

@@ -1,7 +1,7 @@
 package com.wurmonline.server.items.factories;
 
-import com.wurmonline.server.items.KingdomWagon;
-import org.takino.mods.AddKingdomItems;
+import com.wurmonline.server.items.KingdomWagons;
+import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class WagonFactory {
 
     public static void addAllWagons() {
         for (int i=0; i < Constants.WAGON_LIST.length; i++) {
-            int id= KingdomWagon.addWagon(Constants.WAGON_LIST[i],Constants.NAMES[i]);
+            int id= KingdomWagons.addWagon(Constants.WAGON_LIST[i],Constants.NAMES[i]);
             if (id!=0) {
                 wagonList.add(id);
             } else {

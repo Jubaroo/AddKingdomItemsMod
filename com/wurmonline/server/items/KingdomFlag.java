@@ -2,7 +2,7 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.items.factories.Constants;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.takino.mods.AddKingdomItems;
+import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ public class KingdomFlag {
     }
 
     private static int createItem(String model, String name) throws IOException {
-        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.flag." + name);
+        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.flag." + name);
         builder.name(name + " flag", name + " flags", "A symbol of " + name + " kingdom.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{(short) 24, (short) 92, (short) 147,

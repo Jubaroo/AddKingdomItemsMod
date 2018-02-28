@@ -2,7 +2,7 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.items.factories.Constants;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.takino.mods.AddKingdomItems;
+import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.io.IOException;
 
@@ -30,7 +30,7 @@ MiscConstants.EMPTY_BYTE_PRIMITIVE_ARRAY, "model.structure.tent.pavilion.",
 10.0F, 2500, (byte)17, 1, false).setContainerSize(100, 200, 201);
      */
     private static int createItem(String model, String name) throws IOException {
-        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.pavilion." + name);
+        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.pavilion." + name);
         builder.name(name + " pavilion", name + " pavilions", "A pleasant open air tent designed for various kinds of "+name+" gatherings.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{(short) 24, (short) 47, (short) 109,

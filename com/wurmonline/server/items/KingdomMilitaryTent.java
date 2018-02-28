@@ -2,7 +2,7 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.items.factories.Constants;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.takino.mods.AddKingdomItems;
+import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.io.IOException;
 
@@ -32,7 +32,7 @@ MiscConstants.EMPTY_BYTE_PRIMITIVE_ARRAY,
 .setContainerSize(100, 200, 201);
 */
     private static int createItem(String model, String name) throws IOException {
-        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.military.tent." + name);
+        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.military.tent." + name);
         builder.name(name + " military tent", name + " military tents", "This is the standard tent for " + name + " military actions.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{(short) 24, (short) 1, (short) 47, (short) 181, (short) 109, (short) 117, (short) 52, (short) 86, (short) 98, (short) 180});

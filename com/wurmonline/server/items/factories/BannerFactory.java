@@ -1,7 +1,7 @@
 package com.wurmonline.server.items.factories;
 
 import com.wurmonline.server.items.KingdomBanner;
-import org.takino.mods.AddKingdomItems;
+import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.util.ArrayList;
 

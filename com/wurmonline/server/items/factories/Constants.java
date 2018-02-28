@@ -20,6 +20,7 @@ public class Constants {
             "model.transports.medium.wagon.drea", // Dreadnought
             "model.transports.medium.wagon.thec", // The Crusaders
             "model.transports.medium.wagon.pand", // Pandemonium
+            "model.transports.medium.wagon.anub", // Legion of Anubis
             "model.transports.medium.wagon.wurm", // Wurm University
             "model.transports.medium.wagon.yval"  // Valhalla II
     };
@@ -39,6 +40,7 @@ public class Constants {
             "model.decoration.banner.drea", // Dreadnought
             "model.decoration.banner.thec", // The Crusaders
             "model.decoration.banner.pand", // Pandemonium
+            "model.decoration.banner.anub", // Legion of Anubis
     };
 
     static final String[] BANNER_TALL_LIST = {
@@ -56,6 +58,7 @@ public class Constants {
             "model.decoration.tallbanner.drea", // Dreadnought
             "model.decoration.tallbanner.thec", // The Crusaders
             "model.decoration.tallbanner.pand", // Pandemonium
+            "model.decoration.tallbanner.anub", // Legion of Anubis
     };
     
     static final String[] FLAG_LIST = {
@@ -73,6 +76,7 @@ public class Constants {
             "model.decoration.flag.drea", // Dreadnought
             "model.decoration.flag.thec", // The Crusaders
             "model.decoration.flag.pand", // Pandemonium
+            "model.decoration.flag.anub", // Legion of Anubis
     };
 
     static final String[] TOWER_LIST = {
@@ -89,6 +93,7 @@ public class Constants {
             "model.structure.tent.military.cotton.drea", // Dreadnought
             "model.structure.tent.military.cotton.thec", // The Crusaders
             "model.structure.tent.military.cotton.pand", // Pandemonium
+            "model.structure.tent.military.cotton.anub", // Legion of Anubis
     };
 
     static final String[] PAVILION_LIST = {
@@ -100,12 +105,12 @@ public class Constants {
     static final String[] NAMES = {
             "Jenn-Kellon", "Mol-Rehan", "Horde of the Summoned", "Dragon Kingdom", "Empire of Mol-Rehan", "Black Legion", "Ebonaura",
             "Kingdom of Sol", "The Roman Republic", "Valhalla Descendants", "Macedonia", "Dreadnought", "The Crusaders",
-            "Pandemonium", "Wurm University", "Valhalla II"
+            "Pandemonium", "Legion of Anubis", "Wurm University", "Valhalla II"
     };
 
     static final String[] MILITARY_TENT_NAMES = {
             "Jenn-Kellon", "Mol-Rehan", "Horde of the Summoned", "Empire of Mol-Rehan", "Dreadnought", "The Crusaders",
-            "Pandemonium"
+            "Pandemonium", "Legion of Anubis"
     };
 
     public static byte BIRCHWOOD = (byte)14;
