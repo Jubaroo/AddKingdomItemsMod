@@ -25,9 +25,7 @@ public class KingdomFlag {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.flag." + name);
         builder.name(name + " flag", name + " flags", "A symbol of " + name + " kingdom.");
         builder.descriptions("excellent", "good", "ok", "poor");
-        builder.itemTypes(new short[]{(short) 24, (short) 92, (short) 147,
-        (short) 51, (short) 52, (short) 109, (short) 48, (short) 86,
-        (short) 119, (short) 44, (short) 199, (short) 173});
+        builder.itemTypes(new short[]{24, 92, 124, 147, 52, 109, 48, 86, 119, 44, 199, 173});
         builder.imageNumber((short) 640);
         builder.combatDamage(0);
         builder.decayTime(9072000L);

@@ -116,5 +116,4 @@ public class Constants {
     public static byte BIRCHWOOD = (byte)14;
     public static byte STONE = (byte)15;
     public static byte COTTON = (byte)17;
-
 }

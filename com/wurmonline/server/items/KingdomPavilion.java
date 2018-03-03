@@ -21,21 +21,11 @@ public class KingdomPavilion {
         return 0;
     }
 
-    /*
-createItemTemplate(865, "pavilion", "pavilions", "excellent", "good", "ok", "poor",
-"A pleasant open air tent designed for various kinds of gatherings.",
-new short[]{24, 47, 109, 52, 86, 51, 98, 180, 182},
-(short)640, (short)1, 0, 3024000L, 5, 5, 100, -10,
-MiscConstants.EMPTY_BYTE_PRIMITIVE_ARRAY, "model.structure.tent.pavilion.",
-10.0F, 2500, (byte)17, 1, false).setContainerSize(100, 200, 201);
-     */
     private static int createItem(String model, String name) throws IOException {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.pavilion." + name);
         builder.name(name + " pavilion", name + " pavilions", "A pleasant open air tent designed for various kinds of "+name+" gatherings.");
         builder.descriptions("excellent", "good", "ok", "poor");
-        builder.itemTypes(new short[]{(short) 24, (short) 47, (short) 109,
-                (short) 52, (short) 86, (short) 51, (short) 98, (short) 180,
-                (short) 182});
+        builder.itemTypes(new short[]{24, 47, 109, 52, 86, 51, 98, 180, 182});
         builder.imageNumber((short) 640);
         builder.combatDamage(0);
         builder.decayTime(3024000L);

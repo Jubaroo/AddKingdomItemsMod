@@ -25,9 +25,7 @@ public class KingdomTower {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.tower." + name);
         builder.name(name + " tower", name + " tower", "A high guard tower.");
         builder.descriptions("excellent", "good", "ok", "poor");
-        builder.itemTypes(new short[]{(short) 52, (short) 25, (short) 31,
-                (short) 67, (short) 44, (short) 85, (short) 86, (short) 49,
-                (short) 98, (short) 123, (short) 194, (short) 239});
+        builder.itemTypes(new short[]{52, 25, 31, 67, 44, 85, 86, 49, 98, 123, 194, 239});
         builder.imageNumber((short) 60);
         builder.combatDamage(0);
         builder.decayTime(19353600L);

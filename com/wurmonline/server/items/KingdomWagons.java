@@ -20,26 +20,13 @@ public class KingdomWagons {
         }
         return 0;
     }
-/*
-        createItemTemplate(850, 3, "wagon", "wagons",
-        "almost full", "somewhat occupied", "half-full", "emptyish",
-        "A fairly large wagon designed to be dragged by four animals.",
-        new short[]{108, 1, 31, 21, 51, 52, 44, 117, 193, 134, 47, 48, 176, 180, 160, 54},
-        (short)60, (short)41, 0, 9072000L, 550, 300, 410, -10,
-        MiscConstants.EMPTY_BYTE_PRIMITIVE_ARRAY,
-        "model.transports.medium.wagon.",
-        70.0F, 240000, (byte)14, 50000, true, -1, 0)
-        .setContainerSize(200, 260, 400);
- */
+
     private static int createItem(String model, String name) throws IOException {
         AddKingdomItems.debug("id :  org.kingdom.wagon." + name);
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.wagon." + name);
         builder.name(name + " wagon", name + " wagons", "A fairly large wagon designed to be dragged by four animals. " + "This design is used by "+ name + " kingdom.");
         builder.descriptions("almost full", "somewhat occupied", "half-full", "emptyish");
-        builder.itemTypes(new short[]{(short)108, (short)1, (short)31,
-        (short)21, (short)51, (short)52, (short)44, (short)117,
-        (short)193, (short)134, (short)47, (short)48, (short)176,
-        (short)180, (short)160, (short)54});
+        builder.itemTypes(new short[]{108, 1, 31, 21, 51, 52, 44, 117, 193, 134, 47, 48, 176, 180, 160, 54});
         builder.imageNumber((short)60);
         builder.combatDamage(0);
         builder.decayTime(9072000L);
