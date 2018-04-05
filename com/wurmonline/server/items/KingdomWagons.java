@@ -34,8 +34,8 @@ public class KingdomWagons {
         builder.primarySkill(-10);
         builder.modelName(model + ".");
         builder.size(3);
-        builder.difficulty(70.0F);
-        builder.weightGrams(240000);
+        builder.difficulty(AddKingdomItems.difficulty);//70.0F
+        builder.weightGrams(AddKingdomItems.weightGrams);//240000
         builder.material(Constants.BIRCHWOOD);
         builder.value(50000);
         builder.isTraded(false);
@@ -53,7 +53,7 @@ public class KingdomWagons {
     private static void createCreationEntry(ItemTemplate newWwagon) {
 
         AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(10044, 22, 191, newWwagon.getTemplateId(),
-        false, false, 0.0F, true, true, 0, 40.0D, CreationCategories.CARTS);
+        false, false, 0.0F, true, true, 0, AddKingdomItems.minSkill, CreationCategories.CARTS);// min skill 40.0D
         wagon.addRequirement(new CreationRequirement(1, 191, 1, true));
         wagon.addRequirement(new CreationRequirement(2, 22, 20, true));
         wagon.addRequirement(new CreationRequirement(3, 23, 4, true));

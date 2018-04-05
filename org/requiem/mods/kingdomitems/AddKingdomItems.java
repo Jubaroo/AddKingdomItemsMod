@@ -13,6 +13,7 @@ import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.gotti.wurmunlimited.modloader.interfaces.Configurable;
 import org.gotti.wurmunlimited.modloader.interfaces.ItemTemplatesCreatedListener;
 import org.gotti.wurmunlimited.modloader.interfaces.WurmServerMod;
+import org.gotti.wurmunlimited.modsupport.vehicles.ModVehicleBehaviours;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -27,7 +28,6 @@ import java.util.logging.Logger;
             vehicle.maxDepth = -0.7F;
             vehicle.skillNeeded = 21.0F;
             vehicle.setMaxSpeed(0.7F);
-            vehicle.commandType = 2;
  */
 
 public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplatesCreatedListener {
@@ -38,7 +38,15 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
     private boolean tents;
     private boolean pavilions;
     private boolean banners;
-    private float wagonSpeed;
+    private float setMaxSpeed;
+    private float setMaxDepth;
+    private float setMaxHeight;
+    private float setMaxHeightDiff;
+    public static float difficulty;
+    private int setMaxAllowedLoadDistance;
+    private int skillNeeded;
+    public static int weightGrams;
+    public static double minSkill;
     private static boolean debug;
     private static Logger logger = Logger.getLogger(AddKingdomItems.class.getName());
 
@@ -50,7 +58,15 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
         tents = Boolean.valueOf(properties.getProperty("tents"));
         banners = Boolean.valueOf(properties.getProperty("banners"));
         pavilions = Boolean.valueOf(properties.getProperty("pavilions"));
-        wagonSpeed = Float.parseFloat(properties.getProperty("wagon_speed", Float.toString(wagonSpeed)));
+        setMaxSpeed = Float.parseFloat(properties.getProperty("setMaxSpeed", Float.toString(setMaxSpeed)));
+        setMaxDepth = Float.parseFloat(properties.getProperty("setMaxDepth", Float.toString(setMaxDepth)));
+        setMaxHeight = Float.parseFloat(properties.getProperty("setMaxHeight", Float.toString(setMaxHeight)));
+        setMaxHeightDiff = Float.parseFloat(properties.getProperty("setMaxHeightDiff", Float.toString(setMaxHeightDiff)));
+        difficulty = Float.parseFloat(properties.getProperty("difficulty", Float.toString(difficulty)));
+        setMaxAllowedLoadDistance = Integer.parseInt(properties.getProperty("setMaxAllowedLoadDistance", Integer.toString(setMaxAllowedLoadDistance)));
+        skillNeeded = Integer.parseInt(properties.getProperty("skillNeeded", Integer.toString(skillNeeded)));
+        minSkill = Double.parseDouble(properties.getProperty("minSkill", Double.toString(minSkill)));
+        weightGrams = Integer.parseInt(properties.getProperty("weightGrams", Integer.toString(weightGrams)));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(true)));
         debug("KingdomWagons: " + wagons);
         if (wagons) {
@@ -131,7 +147,7 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
                                     vehicle.setSeatFightMod(1, 1.0F, 0.4F);
                                     vehicle.setSeatOffset(1, 4.05F, 0.0F, 0.84F);
                                 }
-                                vehicle.skillNeeded = 21.0F;
+                                vehicle.skillNeeded = skillNeeded;//21.0F
                                 vehicle.commandType = 2;
                                 hitches = new Seat[]{BehaviourAccessor.getSeat(((byte)2)),
                                         BehaviourAccessor.getSeat((byte)2), BehaviourAccessor.getSeat((byte)2),
@@ -145,11 +161,11 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
                                 hitches[3].offx = -5.0F;
                                 hitches[3].offy = 1.0F;
                                 vehicle.addHitchSeats(hitches);
-                                vehicle.setMaxAllowedLoadDistance(4);
-                                BehaviourAccessor.setMaxSpeed(vehicle,wagonSpeed);
-                                BehaviourAccessor.setMaxDepth(vehicle, -0.7F);
-                                BehaviourAccessor.setMaxHeight(vehicle,-2.0F);
-                                BehaviourAccessor.setMaxHeightDiff(vehicle,0.04F);
+                                vehicle.setMaxAllowedLoadDistance(setMaxAllowedLoadDistance);//4
+                                BehaviourAccessor.setMaxSpeed(vehicle, setMaxSpeed);
+                                BehaviourAccessor.setMaxDepth(vehicle, setMaxDepth);//0.7F
+                                BehaviourAccessor.setMaxHeight(vehicle,setMaxHeight);//2.0F
+                                BehaviourAccessor.setMaxHeightDiff(vehicle,setMaxHeightDiff);//0.04F
                                 return null;
                             }
                         }
@@ -164,6 +180,7 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
 
     @Override
     public void init() {
+        ModVehicleBehaviours.init();
     }
 
     public static void debug(String msg) {
