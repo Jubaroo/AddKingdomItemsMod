@@ -69,7 +69,7 @@ public class MagicCarpets implements ItemTypes {
 
         AdvancedCreationEntry carpet = CreationEntryCreator.createAdvancedEntry(
                 SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, newCarpet.getTemplateId(),
-                false, false, 0.0F, true, true, 0, AddKingdomItems.carpetMinSkill, CreationCategories.REQUIEM_SPECIAL_VEHICLES);
+                false, false, 0.0F, true, true, 0, AddKingdomItems.carpetMinSkill, CreationCategories.CARTS);
         carpet.addRequirement(new CreationRequirement(1, ItemList.clothString, 19, true));
         carpet.addRequirement(new CreationRequirement(2, ItemList.sheet, 3, true));
         carpet.addRequirement(new CreationRequirement(3, ItemList.leatherStrip, 4, true));
