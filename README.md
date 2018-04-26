@@ -17,7 +17,7 @@ New Vehicle - Magic Carpet
 
 - Updated to add container size to pavilions and tents. Fixed wagon speed and slope height to match WU default setting.
 
-**ersion 1.2**
+**Version 1.2**
 
 - Updated to add pavilions, military tents, and guard towers from the existing kingdoms. 
 
