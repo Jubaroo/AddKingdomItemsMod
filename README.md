@@ -1,5 +1,7 @@
 # AddKingdomItemsMod
 
+- Enables the creation of kingdom wagons, banners, and flags not normally able to be crafted. 
+
 **New in version 1.4**
 
 New Vehicle - Magic Carpet 
