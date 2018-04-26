@@ -1,5 +1,7 @@
 package org.requiem.mods.kingdomitems.util;
-
+/**
+ * Created bt Oluf
+ */
 import com.wurmonline.server.behaviours.Seat;
 import org.gotti.wurmunlimited.modloader.ReflectionUtil;
 import org.gotti.wurmunlimited.modloader.classhooks.HookException;

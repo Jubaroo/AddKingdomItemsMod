@@ -2,7 +2,6 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
-import com.wurmonline.server.items.factories.Constants;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
 import org.requiem.mods.kingdomitems.AddKingdomItems;
 
@@ -36,7 +35,7 @@ public class KingdomFlag {
         builder.modelName(model + ".");
         builder.difficulty(40.0f);
         builder.weightGrams(2500);
-        builder.material(Constants.BIRCHWOOD);
+        builder.material(Materials.MATERIAL_WOOD_BIRCH);
         builder.value(10000);
         builder.isTraded(true);
         builder.armourType(ArmourTypes.ARMOUR_NONE);

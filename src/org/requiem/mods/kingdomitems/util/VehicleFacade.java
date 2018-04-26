@@ -1,11 +1,10 @@
 package org.requiem.mods.kingdomitems.util;
-
-
+/**
+ * Created bt Oluf
+ */
 /* 
 * Cloned from WurmServerModLauncher modules/modlauncher/src/main/java/org/gotti/wurmunlimited/modsupport/vehicles/
-
 */
-
 import com.wurmonline.server.NoSuchItemException;
 import com.wurmonline.server.behaviours.Seat;
 import com.wurmonline.server.items.Item;

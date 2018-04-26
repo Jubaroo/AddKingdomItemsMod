@@ -2,7 +2,6 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
-import com.wurmonline.server.items.factories.Constants;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
 import org.requiem.mods.kingdomitems.AddKingdomItems;
 
@@ -36,7 +35,7 @@ public class KingdomPavilion {
         builder.modelName(model + ".");
         builder.difficulty(10.0F);
         builder.weightGrams(2500);
-        builder.material(Constants.COTTON);
+        builder.material(Materials.MATERIAL_COTTON);
         builder.value(1);
         builder.isTraded(false);
         builder.armourType(ArmourTypes.ARMOUR_NONE);

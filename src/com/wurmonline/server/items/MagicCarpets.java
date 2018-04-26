@@ -6,6 +6,7 @@ import com.wurmonline.server.combat.ArmourTypes;
 import com.wurmonline.server.skills.SkillList;
 import com.wurmonline.shared.constants.ItemMaterials;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
+import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.io.IOException;
 
@@ -50,8 +51,8 @@ public class MagicCarpets implements ItemTypes {
         builder.dimensions(200,150,5);
         builder.primarySkill(-10);
         builder.modelName(model + ".");
-        builder.difficulty(80.0F);
-        builder.weightGrams(4000);
+        builder.difficulty(AddKingdomItems.carpetDifficulty);
+        builder.weightGrams(AddKingdomItems.carpetWeightGrams);
         builder.material(ItemMaterials.MATERIAL_COTTON);
         builder.value(75000);
         builder.isTraded(true);
@@ -59,20 +60,19 @@ public class MagicCarpets implements ItemTypes {
         builder.dyeAmountOverrideGrams((short) 0);
         ItemTemplate resultTemplate = builder.build();
         debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; carpet? " + resultTemplate.isVehicle());
+        createCreationEntry(resultTemplate);
 
         return resultTemplate.getTemplateId();
     }
 
-    public static void createCreationEntry(int templateId) {
+    public static void createCreationEntry(ItemTemplate newCarpet) {
 
         AdvancedCreationEntry carpet = CreationEntryCreator.createAdvancedEntry(
-                SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, templateId,
-                false, false, 0.0F, true, true, 0, 57.0D, CreationCategories.REQUIEM_SPECIAL_VEHICLES);
+                SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, newCarpet.getTemplateId(),
+                false, false, 0.0F, true, true, 0, AddKingdomItems.carpetMinSkill, CreationCategories.REQUIEM_SPECIAL_VEHICLES);
         carpet.addRequirement(new CreationRequirement(1, ItemList.clothString, 19, true));
         carpet.addRequirement(new CreationRequirement(2, ItemList.sheet, 3, true));
         carpet.addRequirement(new CreationRequirement(3, ItemList.leatherStrip, 4, true));
         carpet.addRequirement(new CreationRequirement(4, ItemList.sourceSalt, 10, true));
     }
-
-
 }

@@ -2,12 +2,12 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
-import com.wurmonline.server.items.factories.Constants;
 import com.wurmonline.server.skills.SkillList;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.requiem.mods.kingdomitems.AddKingdomItems;
 
 import java.io.IOException;
+
+import static org.requiem.mods.kingdomitems.AddKingdomItems.*;
 
 /**
  * Base for all wagons
@@ -15,17 +15,17 @@ import java.io.IOException;
 public class KingdomWagons implements ItemTypes {
 
     public static int addWagon(String model, String name) {
-        AddKingdomItems.debug("Initiating Kingdom Wagon " + model);
+        debug("Initiating Kingdom Wagon " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initialization of wagon failed: " + e.toString());
+            debug("Initialization of wagon failed: " + e.toString());
         }
         return 0;
     }
 
     private static int createItem(String model, String name) throws IOException {
-        AddKingdomItems.debug("id :  org.kingdom.wagon." + name);
+        debug("id :  org.kingdom.wagon." + name);
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.wagon." + name);
         builder.name(name + " wagon", name + " wagons", "A fairly large wagon designed to be dragged by four animals. " + "This design is used by "+ name + " kingdom.");
         builder.descriptions("almost full", "somewhat occupied", "half-full", "emptyish");
@@ -47,6 +47,7 @@ public class KingdomWagons implements ItemTypes {
                 ITEM_TYPE_NOWORKPARENT,
                 ITEM_TYPE_NORENAME
         });
+
         builder.imageNumber((short)60);
         builder.combatDamage(0);
         builder.decayTime(9072000L);
@@ -54,9 +55,9 @@ public class KingdomWagons implements ItemTypes {
         builder.primarySkill(-10);
         builder.modelName(model + ".");
         builder.size(3);
-        builder.difficulty(AddKingdomItems.difficulty);//70.0F
-        builder.weightGrams(AddKingdomItems.weightGrams);//240000
-        builder.material(Constants.BIRCHWOOD);
+        builder.difficulty(wagonDifficulty);//70.0F
+        builder.weightGrams(wagonWeightGrams);//240000
+        builder.material(Materials.MATERIAL_WOOD_BIRCH);
         builder.value(50000);
         builder.isTraded(false);
         builder.armourType(ArmourTypes.ARMOUR_NONE);
@@ -64,7 +65,7 @@ public class KingdomWagons implements ItemTypes {
         builder.dyeAmountOverrideGrams((short) 0);
         builder.containerSize(200,260,400);
         ItemTemplate resultTemplate = builder.build();
-        AddKingdomItems.debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; vehicle? " + resultTemplate.isVehicle());
+        debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; vehicle? " + resultTemplate.isVehicle());
         createCreationEntry(resultTemplate);
 
         return resultTemplate.getTemplateId();
@@ -74,7 +75,7 @@ public class KingdomWagons implements ItemTypes {
 
         AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(
                 SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, newWwagon.getTemplateId(),
-        false, false, 0.0F, true, true, 0, AddKingdomItems.minSkill, CreationCategories.CARTS);// min skill 40.0D
+        false, false, 0.0F, true, true, 0, wagonMinSkill, CreationCategories.CARTS);// min skill 40.0D
         wagon.addRequirement(new CreationRequirement(1, ItemList.wheelAxleSmall, 1, true));
         wagon.addRequirement(new CreationRequirement(2, ItemList.plank, 20, true));
         wagon.addRequirement(new CreationRequirement(3, ItemList.shaft, 4, true));

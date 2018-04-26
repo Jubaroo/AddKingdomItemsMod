@@ -1,6 +1,7 @@
 package org.requiem.mods.kingdomitems.util;
-
-
+/**
+ * Created bt Oluf
+ */
 import com.wurmonline.server.Items;
 import com.wurmonline.server.NoSuchItemException;
 import com.wurmonline.server.behaviours.Seat;

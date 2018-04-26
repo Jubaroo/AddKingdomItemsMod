@@ -5,10 +5,6 @@ package com.wurmonline.server.items.factories;
  */
 public class Constants {
 
-    public static byte BIRCHWOOD = (byte)14;
-    public static byte STONE = (byte)15;
-    public static byte COTTON = (byte)17;
-
     static final String[] WAGON_LIST = {
             "model.transports.medium.wagon.jenn", // Jenn-Kellon
             "model.transports.medium.wagon.molr", // Mol-Rehan

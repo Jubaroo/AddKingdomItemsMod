@@ -2,7 +2,6 @@ package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
-import com.wurmonline.server.items.factories.Constants;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
 import org.requiem.mods.kingdomitems.AddKingdomItems;
 
@@ -36,7 +35,7 @@ public class KingdomTower {
         builder.modelName(model + ".");
         builder.difficulty(20.0F);
         builder.weightGrams(500000);
-        builder.material(Constants.STONE);
+        builder.material(Materials.MATERIAL_STONE);
         builder.armourType(ArmourTypes.ARMOUR_NONE);
         builder.behaviourType(BehaviourList.itemBehaviour);
         ItemTemplate result = builder.build();
