@@ -1,4 +1,4 @@
-# AddKingdomItemsMod
+# Add Kingdom Items Mod V1.3
 
 - Enables the creation of PMK wagons, banners, and flags not normally able to be crafted. 
 - Prerequisites: Server mod loader 0.34.1 or greater 
