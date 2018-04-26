@@ -1,6 +1,6 @@
 # AddKingdomItemsMod
 
-- Enables the creation of kingdom wagons, banners, and flags not normally able to be crafted. 
+- Enables the creation of PMK wagons, banners, and flags not normally able to be crafted. 
 
 **New in version 1.4**
 
