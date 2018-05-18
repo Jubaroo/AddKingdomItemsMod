@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  * Adds various kingdom items and a magic carpet.
  */
 public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplatesCreatedListener, ServerStartedListener {
-    private static final Logger logger = Logger.getLogger(AddKingdomItems.class.getName() + " v1.5");
+    private static final Logger logger = Logger.getLogger(AddKingdomItems.class.getName() + " v1.6");
     private boolean         wagons;
     private boolean         magicCarpets;
     private boolean         towers;
