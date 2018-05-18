@@ -23,7 +23,7 @@ public class KingdomBanner {
     }
 
     private static int createItem(String model, String name, boolean tall) throws IOException {
-        String itemId = "org.kingdom.banner.";
+        String itemId = "org.takino.banner.";
         if (tall) {
             itemId+="tall.";
         }

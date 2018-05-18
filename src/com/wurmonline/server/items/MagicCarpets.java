@@ -33,6 +33,7 @@ public class MagicCarpets implements ItemTypes {
         builder.itemTypes(new short[]{
                 ITEM_TYPE_NAMED,
                 ITEM_TYPE_CLOTH,
+                ITEM_TYPE_COLORABLE,
                 ITEM_TYPE_TURNABLE,
                 ITEM_TYPE_DECORATION,
                 ITEM_TYPE_REPAIRABLE,
@@ -69,7 +70,7 @@ public class MagicCarpets implements ItemTypes {
 
         AdvancedCreationEntry carpet = CreationEntryCreator.createAdvancedEntry(
                 SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, newCarpet.getTemplateId(),
-                false, false, 0.0F, true, true, 0, AddKingdomItems.carpetMinSkill, CreationCategories.CARTS);
+                false, true, 0.0F, false, false, 0, AddKingdomItems.carpetMinSkill, CreationCategories.CARTS);
         carpet.addRequirement(new CreationRequirement(1, ItemList.clothString, 19, true));
         carpet.addRequirement(new CreationRequirement(2, ItemList.sheet, 3, true));
         carpet.addRequirement(new CreationRequirement(3, ItemList.leatherStrip, 4, true));

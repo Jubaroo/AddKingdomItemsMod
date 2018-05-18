@@ -23,7 +23,7 @@ public class KingdomMilitaryTent {
     }
 
     private static int createItem(String model, String name) throws IOException {
-        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.military.tent." + name);
+        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.military.tent." + name);
         builder.name(name + " military tent", name + " military tents", "This is the standard tent for " + name + " military actions.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{24, 1, 47, 181, 109, 117, 52, 86, 98, 180});

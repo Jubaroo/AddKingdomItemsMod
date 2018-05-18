@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  * Adds various kingdom items and a magic carpet.
  */
 public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplatesCreatedListener, ServerStartedListener {
-    private static final Logger logger = Logger.getLogger(AddKingdomItems.class.getName() + " v1.4");
+    private static final Logger logger = Logger.getLogger(AddKingdomItems.class.getName() + " v1.5");
     private boolean         wagons;
     private boolean         magicCarpets;
     private boolean         towers;
@@ -55,7 +55,7 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
     @Override
     public void configure(Properties properties) {
         wagons = Boolean.valueOf(properties.getProperty("wagons", String.valueOf(true)));
-        magicCarpets = Boolean.valueOf(properties.getProperty("MagicCarpets", String.valueOf(true)));
+        magicCarpets = Boolean.valueOf(properties.getProperty("magicCarpets", String.valueOf(true)));
         flags = Boolean.valueOf(properties.getProperty("flags", String.valueOf(true)));
         towers = Boolean.valueOf(properties.getProperty("towers", String.valueOf(true)));
         tents = Boolean.valueOf(properties.getProperty("tents", String.valueOf(true)));
@@ -69,24 +69,23 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
         wagonSkillNeeded = Float.parseFloat(properties.getProperty("wagonSkillNeeded", String.valueOf(21.0F)));
         wagonMinSkill = Double.parseDouble(properties.getProperty("wagonMinSkill", String.valueOf(40.0D)));
         wagonWeightGrams = Integer.parseInt(properties.getProperty("wagonWeightGrams", String.valueOf(240000)));
-        carpetMaxSpeed = Float.parseFloat(properties.getProperty("carpetMaxSpeed", String.valueOf(0.07F)));
+        carpetMaxSpeed = Float.parseFloat(properties.getProperty("carpetMaxSpeed", String.valueOf(0.1F)));
         carpetMaxDepth = Float.parseFloat(properties.getProperty("carpetMaxDepth", String.valueOf(-0.07F)));
         carpetMaxHeightDiff = Float.parseFloat(properties.getProperty("carpetMaxHeightDiff", String.valueOf(0.04F)));
-        carpetDifficulty = Float.parseFloat(properties.getProperty("carpetDifficulty", String.valueOf(70.0F)));
-        carpetSkillNeeded = Float.parseFloat(properties.getProperty("carpetSkillNeeded", String.valueOf(21.0F)));
-        carpetMinSkill = Double.parseDouble(properties.getProperty("carpetMinSkill", String.valueOf(40.0D)));
-        carpetWeightGrams = Integer.parseInt(properties.getProperty("carpetWeightGrams", String.valueOf(240000)));
+        carpetDifficulty = Float.parseFloat(properties.getProperty("carpetDifficulty", String.valueOf(80.0F)));
+        carpetSkillNeeded = Float.parseFloat(properties.getProperty("carpetSkillNeeded", String.valueOf(23.0F)));
+        carpetMinSkill = Double.parseDouble(properties.getProperty("carpetMinSkill", String.valueOf(50.0D)));
+        carpetWeightGrams = Integer.parseInt(properties.getProperty("carpetWeightGrams", String.valueOf(2400)));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(false)));
         debug("KingdomWagons: " + wagons);
-        if (wagons) {
-            debug("Initializing wagon hooks");
+        if (wagons) { debug("Initializing wagon hooks");
             registerWagonHook();
             registerWagonManageHook();
         }
         debug("MagicCarpets: " + magicCarpets);
         if (magicCarpets) { debug("Initializing magic carpet hooks");
             registerCarpetHook();
-            registerCarpetManageHook();
+            //registerCarpetManageHook();
         }
     }
 
@@ -279,6 +278,5 @@ public class AddKingdomItems implements WurmServerMod, Configurable, ItemTemplat
 
     @Override
     public void onServerStarted() {
-
     }
 }

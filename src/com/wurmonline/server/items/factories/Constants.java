@@ -118,7 +118,7 @@ public class Constants {
     };
 
     static final String[] CARPET_NAMES = {
-            "Test"
+            "Gliding"
     };
 
 }
