@@ -19,7 +19,7 @@
 11. Macedonia
 12. Dreadnought
 13. The Crusaders
-14. Pandemonium"
+14. Pandemonium
 15. Legion of Anubis
 16. Wurm University
 17. Valhalla Descendants
