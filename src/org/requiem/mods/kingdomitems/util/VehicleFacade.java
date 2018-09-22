@@ -45,8 +45,6 @@ public interface VehicleFacade {
 
     void setWindImpact(final byte impact);
 
-	
-	
 	void setCanHaveEquipment(boolean b);
 
 	Item getItem() throws NoSuchItemException;

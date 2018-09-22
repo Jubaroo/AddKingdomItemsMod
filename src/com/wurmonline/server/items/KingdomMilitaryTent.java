@@ -3,7 +3,7 @@ package com.wurmonline.server.items;
 import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.requiem.mods.kingdomitems.AddKingdomItems;
+import org.requiem.mods.kingdomitems.Initiator;
 
 import java.io.IOException;
 
@@ -13,11 +13,11 @@ import java.io.IOException;
 public class KingdomMilitaryTent {
 
     public static int addTent(String model, String name) {
-        AddKingdomItems.debug("Initiating Kingdom Tent " + model);
+        Initiator.debug("Initiating Kingdom Tent " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initialization of tent failed: " + e.toString());
+            Initiator.debug("Initialization of tent failed: " + e.toString());
         }
         return 0;
     }
@@ -38,11 +38,10 @@ public class KingdomMilitaryTent {
         builder.material(Materials.MATERIAL_COTTON);
         builder.value(1);
         builder.isTraded(false);
-        builder.armourType(ArmourTypes.ARMOUR_NONE);
         builder.behaviourType(BehaviourList.itemBehaviour);
         builder.containerSize(100, 200, 201);
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
+        if (Initiator.tents) { createCreationEntry(result); }
 
         return result.getTemplateId();
     }

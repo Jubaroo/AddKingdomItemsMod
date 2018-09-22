@@ -1,9 +1,10 @@
 package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
+import com.wurmonline.server.combat.ArmourTemplate;
 import com.wurmonline.server.combat.ArmourTypes;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.requiem.mods.kingdomitems.AddKingdomItems;
+import org.requiem.mods.kingdomitems.Initiator;
 
 import java.io.IOException;
 
@@ -13,11 +14,11 @@ import java.io.IOException;
 public class KingdomBanner {
 
     public static int addBanner(String model, String name, boolean tall) {
-        AddKingdomItems.debug("Initiating Kingdom Banner " + model);
+        Initiator.debug("Initiating Kingdom Banner " + model);
         try {
             return createItem(model, name, tall);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initialization of banner failed: " + e.toString());
+            Initiator.debug("Initialization of banner failed: " + e.toString());
         }
         return 0;
     }
@@ -46,16 +47,13 @@ public class KingdomBanner {
         builder.material(Materials.MATERIAL_WOOD_BIRCH);
         builder.value(10000);
         builder.isTraded(true);
-        builder.armourType(ArmourTypes.ARMOUR_NONE);
         builder.behaviourType(BehaviourList.itemBehaviour);
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
+        if (Initiator.banners) { createCreationEntry(result); }
 
         return result.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newBanner) {
-        CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(),
-        true, true, 0.0F, false, false, CreationCategories.FLAGS);
+    private static void createCreationEntry(ItemTemplate newBanner) { CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(), true, true, 0.0F, false, false, CreationCategories.FLAGS);
     }
 }

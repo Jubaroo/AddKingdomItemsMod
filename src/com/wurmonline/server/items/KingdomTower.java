@@ -3,7 +3,7 @@ package com.wurmonline.server.items;
 import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.requiem.mods.kingdomitems.AddKingdomItems;
+import org.requiem.mods.kingdomitems.Initiator;
 
 import java.io.IOException;
 
@@ -13,11 +13,11 @@ import java.io.IOException;
 public class KingdomTower {
 
     public static int addTower(String model, String name) {
-        AddKingdomItems.debug("Initiating Kingdom Tower " + model);
+        Initiator.debug("Initiating Kingdom Tower " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initialization of tower failed: " + e.toString());
+            Initiator.debug("Initialization of tower failed: " + e.toString());
         }
         return 0;
     }
@@ -36,10 +36,9 @@ public class KingdomTower {
         builder.difficulty(20.0F);
         builder.weightGrams(500000);
         builder.material(Materials.MATERIAL_STONE);
-        builder.armourType(ArmourTypes.ARMOUR_NONE);
         builder.behaviourType(BehaviourList.itemBehaviour);
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
+        if (Initiator.towers) { createCreationEntry(result); }
 
         return result.getTemplateId();
     }

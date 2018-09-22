@@ -3,7 +3,7 @@ package com.wurmonline.server.items;
 import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.requiem.mods.kingdomitems.AddKingdomItems;
+import org.requiem.mods.kingdomitems.Initiator;
 
 import java.io.IOException;
 
@@ -13,11 +13,11 @@ import java.io.IOException;
 public class KingdomFlag {
 
     public static int addFlag(String model, String name) {
-        AddKingdomItems.debug("Initiating Kingdom Flag " + model);
+        Initiator.debug("Initiating Kingdom Flag " + model);
         try {
             return createItem(model, name);
         } catch (Exception e) {
-            AddKingdomItems.debug("Initialization of wagon failed: " + e.toString());
+            Initiator.debug("Initialization of wagon failed: " + e.toString());
         }
         return 0;
     }
@@ -38,15 +38,12 @@ public class KingdomFlag {
         builder.material(Materials.MATERIAL_WOOD_BIRCH);
         builder.value(10000);
         builder.isTraded(true);
-        builder.armourType(ArmourTypes.ARMOUR_NONE);
         builder.behaviourType(BehaviourList.itemBehaviour);
         ItemTemplate result = builder.build();
-        createCreationEntry(result);
+        if (Initiator.flags) { createCreationEntry(result); }
 
         return result.getTemplateId();
     }
-    private static void createCreationEntry(ItemTemplate newBanner) {
-        CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(),
-        true, true, 0.0F, false, false, CreationCategories.FLAGS);
+    private static void createCreationEntry(ItemTemplate newBanner) { CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(), true, true, 0.0F, false, false, CreationCategories.FLAGS);
     }
 }

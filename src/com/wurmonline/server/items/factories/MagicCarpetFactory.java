@@ -1,10 +1,11 @@
 package com.wurmonline.server.items.factories;
 
 import com.wurmonline.server.items.MagicCarpets;
+import org.requiem.mods.kingdomitems.Constants;
 
 import java.util.ArrayList;
 
-import static org.requiem.mods.kingdomitems.AddKingdomItems.debug;
+import static org.requiem.mods.kingdomitems.Initiator.debug;
 
 /**
  * Creates all variants of magic carpets

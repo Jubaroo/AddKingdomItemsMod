@@ -4,10 +4,11 @@ import com.wurmonline.server.behaviours.BehaviourList;
 import com.wurmonline.server.combat.ArmourTypes;
 import com.wurmonline.server.skills.SkillList;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
+import org.requiem.mods.kingdomitems.Initiator;
 
 import java.io.IOException;
 
-import static org.requiem.mods.kingdomitems.AddKingdomItems.*;
+import static org.requiem.mods.kingdomitems.Initiator.*;
 
 /**
  * Base for all wagons
@@ -60,22 +61,18 @@ public class KingdomWagons implements ItemTypes {
         builder.material(Materials.MATERIAL_WOOD_BIRCH);
         builder.value(50000);
         builder.isTraded(false);
-        builder.armourType(ArmourTypes.ARMOUR_NONE);
         builder.behaviourType(BehaviourList.vehicleBehaviour);
         builder.dyeAmountOverrideGrams((short) 0);
         builder.containerSize(200,260,400);
         ItemTemplate resultTemplate = builder.build();
         debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; vehicle? " + resultTemplate.isVehicle());
-        createCreationEntry(resultTemplate);
-
+        if (Initiator.wagons) { createCreationEntry(resultTemplate); }
         return resultTemplate.getTemplateId();
     }
 
-    public static void createCreationEntry(ItemTemplate newWwagon) {
+    private static void createCreationEntry(ItemTemplate newWwagon) {
 
-        AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(
-                SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, newWwagon.getTemplateId(),
-        false, false, 0.0F, true, true, 0, wagonMinSkill, CreationCategories.CARTS);// min skill 40.0D
+        AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, newWwagon.getTemplateId(), false, false, 0.0F, true, true, 0, wagonMinSkill, CreationCategories.CARTS);// min skill 40.0D
         wagon.addRequirement(new CreationRequirement(1, ItemList.wheelAxleSmall, 1, true));
         wagon.addRequirement(new CreationRequirement(2, ItemList.plank, 20, true));
         wagon.addRequirement(new CreationRequirement(3, ItemList.shaft, 4, true));

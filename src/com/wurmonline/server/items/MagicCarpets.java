@@ -6,11 +6,11 @@ import com.wurmonline.server.combat.ArmourTypes;
 import com.wurmonline.server.skills.SkillList;
 import com.wurmonline.shared.constants.ItemMaterials;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
-import org.requiem.mods.kingdomitems.AddKingdomItems;
+import org.requiem.mods.kingdomitems.Initiator;
 
 import java.io.IOException;
 
-import static org.requiem.mods.kingdomitems.AddKingdomItems.debug;
+import static org.requiem.mods.kingdomitems.Initiator.debug;
 
 public class MagicCarpets implements ItemTypes {
 
@@ -52,25 +52,22 @@ public class MagicCarpets implements ItemTypes {
         builder.dimensions(200,150,5);
         builder.primarySkill(-10);
         builder.modelName(model + ".");
-        builder.difficulty(AddKingdomItems.carpetDifficulty);
-        builder.weightGrams(AddKingdomItems.carpetWeightGrams);
+        builder.difficulty(Initiator.carpetDifficulty);
+        builder.weightGrams(Initiator.carpetWeightGrams);
         builder.material(ItemMaterials.MATERIAL_COTTON);
         builder.value(75000);
         builder.isTraded(true);
-        builder.armourType(ArmourTypes.ARMOUR_NONE);
         builder.dyeAmountOverrideGrams((short) 0);
         ItemTemplate resultTemplate = builder.build();
         debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; carpet? " + resultTemplate.isVehicle());
-        createCreationEntry(resultTemplate);
+        if (Initiator.magicCarpets) { createCreationEntry(resultTemplate); }
 
         return resultTemplate.getTemplateId();
     }
 
-    public static void createCreationEntry(ItemTemplate newCarpet) {
+    private static void createCreationEntry(ItemTemplate newCarpet) {
 
-        AdvancedCreationEntry carpet = CreationEntryCreator.createAdvancedEntry(
-                SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, newCarpet.getTemplateId(),
-                false, true, 0.0F, false, false, 0, AddKingdomItems.carpetMinSkill, CreationCategories.CARTS);
+        AdvancedCreationEntry carpet = CreationEntryCreator.createAdvancedEntry(SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, newCarpet.getTemplateId(), false, true, 0.0F, false, false, 0, Initiator.carpetMinSkill, CreationCategories.CARTS);
         carpet.addRequirement(new CreationRequirement(1, ItemList.clothString, 19, true));
         carpet.addRequirement(new CreationRequirement(2, ItemList.sheet, 3, true));
         carpet.addRequirement(new CreationRequirement(3, ItemList.leatherStrip, 4, true));
