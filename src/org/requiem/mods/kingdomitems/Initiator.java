@@ -308,7 +308,7 @@ public class Initiator implements WurmServerMod, Configurable, ItemTemplatesCrea
     }
 
     public String getVersion() {
-        return "v1.8";
+        return "v1.7";
     }
 
 }
