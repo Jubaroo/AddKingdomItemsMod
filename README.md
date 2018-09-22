@@ -1,9 +1,23 @@
-# Add Kingdom Items Mod V1.4
+# Add Kingdom Items Mod V1.7
 
 - Enables the creation of PMK wagons, banners, and flags not normally able to be crafted. 
 - Prerequisites: Server mod loader 0.34.1 or greater 
 - Unzip this archive into the mods folder. No additional mods required on server or client side! 
 - See AddKingdomItemsMod.properties for vehicle configuration settings
+
+**Version 1.7** 
+
+- Updated for 1.8.0.3
+- Added new PMK's
+
+**Version 1.6** 
+
+- Fixed loom being used when making the magic carpet.
+- Made wagons able to be dyed.
+
+**Version 1.5** 
+
+- Fixed naming issue that cause it to be incompatible with some servers.
 
 **Version 1.4** 
 
