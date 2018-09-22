@@ -5,6 +5,26 @@
 - Unzip this archive into the mods folder. No additional mods required on server or client side! 
 - See AddKingdomItemsMod.properties for vehicle configuration settings
 
+**List of PMK's**
+1. Jenn-Kellon
+2. Mol-Rehan
+3. Horde of the Summoned
+4. Dragon Kingdom
+5. Empire of Mol-Rehan
+6. Black Legion
+7. Ebonaura
+8. Kingdom of Sol
+9. The Roman Republic
+10. Valhalla
+11. Macedonia
+12. Dreadnought
+13. The Crusaders
+14. Pandemonium"
+15. Legion of Anubis
+16. Wurm University
+17. Valhalla Descendants
+18. Apocalypse Order
+
 **Version 1.7** 
 
 - Updated for 1.8.0.3
