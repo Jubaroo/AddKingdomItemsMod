@@ -1,3 +1,4 @@
+
 package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
@@ -24,7 +25,7 @@ public class KingdomBanner {
     }
 
     private static int createItem(String model, String name, boolean tall) throws IOException {
-        String itemId = "org.takino.banner.";
+        String itemId = "org.kingdom.banner.";
         if (tall) {
             itemId+="tall.";
         }

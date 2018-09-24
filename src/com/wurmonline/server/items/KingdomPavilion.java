@@ -1,3 +1,4 @@
+
 package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
@@ -23,7 +24,7 @@ public class KingdomPavilion {
     }
 
     private static int createItem(String model, String name) throws IOException {
-        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.pavilion." + name);
+        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.pavilion." + name);
         builder.name(name + " pavilion", name + " pavilions", "A pleasant open air tent designed for various kinds of "+name+" gatherings.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{24, 47, 109, 52, 86, 51, 98, 180, 182});

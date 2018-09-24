@@ -1,3 +1,4 @@
+
 package com.wurmonline.server.items.factories;
 
 import com.wurmonline.server.items.KingdomFlag;

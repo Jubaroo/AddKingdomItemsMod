@@ -1,3 +1,4 @@
+
 package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
@@ -23,7 +24,7 @@ public class KingdomFlag {
     }
 
     private static int createItem(String model, String name) throws IOException {
-        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.flag." + name);
+        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.flag." + name);
         builder.name(name + " flag", name + " flags", "A symbol of " + name + " kingdom.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{24, 92, 124, 147, 52, 109, 48, 86, 119, 44, 199, 173});

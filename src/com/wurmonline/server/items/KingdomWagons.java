@@ -1,3 +1,4 @@
+
 package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
@@ -26,8 +27,8 @@ public class KingdomWagons implements ItemTypes {
     }
 
     private static int createItem(String model, String name) throws IOException {
-        debug("id :  org.takino.wagon." + name);
-        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.takino.wagon." + name);
+        debug("id :  org.kingdom.wagon." + name);
+        ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.wagon." + name);
         builder.name(name + " wagon", name + " wagons", "A fairly large wagon designed to be dragged by four animals. " + "This design is used by "+ name + " kingdom.");
         builder.descriptions("almost full", "somewhat occupied", "half-full", "emptyish");
         builder.itemTypes(new short[]{
