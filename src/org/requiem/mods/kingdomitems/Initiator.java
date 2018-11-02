@@ -109,16 +109,10 @@ public class Initiator implements WurmServerMod, Configurable, ItemTemplatesCrea
         carpetWeightGrams = Integer.parseInt(properties.getProperty("carpetWeightGrams", String.valueOf(Initiator.carpetWeightGrams)));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(debug)));
 
-        debug("KingdomWagons: " + wagons);
-        if (wagons) { debug("Initializing wagon hooks");
             registerWagonHook();
             registerWagonManageHook();
-        }
-        debug("MagicCarpets: " + magicCarpets);
-        if (magicCarpets) { debug("Initializing magic carpet hooks");
             registerCarpetHook();
             //registerCarpetManageHook();
-        }
     }
 
     public static void registerWagonManageHook() {

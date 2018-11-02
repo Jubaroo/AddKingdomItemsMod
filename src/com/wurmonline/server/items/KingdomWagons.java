@@ -2,7 +2,6 @@
 package com.wurmonline.server.items;
 
 import com.wurmonline.server.behaviours.BehaviourList;
-import com.wurmonline.server.combat.ArmourTypes;
 import com.wurmonline.server.skills.SkillList;
 import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
 import org.requiem.mods.kingdomitems.Initiator;
@@ -29,7 +28,7 @@ public class KingdomWagons implements ItemTypes {
     private static int createItem(String model, String name) throws IOException {
         debug("id :  org.kingdom.wagon." + name);
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.wagon." + name);
-        builder.name(name + " wagon", name + " wagons", "A fairly large wagon designed to be dragged by four animals. " + "This design is used by "+ name + " kingdom.");
+        builder.name(name + " wagon", name + " wagons", "A fairly large wagon designed to be dragged by four animals. " + "This design is used by " + name + " kingdom.");
         builder.descriptions("almost full", "somewhat occupied", "half-full", "emptyish");
         builder.itemTypes(new short[]{
                 ITEM_TYPE_NAMED,
@@ -50,10 +49,10 @@ public class KingdomWagons implements ItemTypes {
                 ITEM_TYPE_NORENAME
         });
 
-        builder.imageNumber((short)60);
+        builder.imageNumber((short) 60);
         builder.combatDamage(0);
         builder.decayTime(9072000L);
-        builder.dimensions(550,300,410);
+        builder.dimensions(550, 300, 410);
         builder.primarySkill(-10);
         builder.modelName(model + ".");
         builder.size(3);
@@ -64,15 +63,16 @@ public class KingdomWagons implements ItemTypes {
         builder.isTraded(false);
         builder.behaviourType(BehaviourList.vehicleBehaviour);
         builder.dyeAmountOverrideGrams((short) 0);
-        builder.containerSize(200,260,400);
+        builder.containerSize(200, 260, 400);
         ItemTemplate resultTemplate = builder.build();
         debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; vehicle? " + resultTemplate.isVehicle());
-        if (Initiator.wagons) { createCreationEntry(resultTemplate); }
+        if (Initiator.wagons) {
+            createCreationEntry(resultTemplate);
+        }
         return resultTemplate.getTemplateId();
     }
 
     private static void createCreationEntry(ItemTemplate newWwagon) {
-
         AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, newWwagon.getTemplateId(), false, false, 0.0F, true, true, 0, wagonMinSkill, CreationCategories.CARTS);// min skill 40.0D
         wagon.addRequirement(new CreationRequirement(1, ItemList.wheelAxleSmall, 1, true));
         wagon.addRequirement(new CreationRequirement(2, ItemList.plank, 20, true));
