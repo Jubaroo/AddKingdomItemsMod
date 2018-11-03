@@ -31,7 +31,7 @@ public class VehicleFacadeImpl implements VehicleFacade {
 			createOnlyPassengerSeats = ReflectionUtil.getMethod(Vehicle.class, "createOnlyPassengerSeats");
 			createPassengerSeats = ReflectionUtil.getMethod(Vehicle.class, "createPassengerSeats");
 			setWindImpact = ReflectionUtil.getMethod(Vehicle.class, "setWindImpact");
-			getWurmid = ReflectionUtil.getMethod(Vehicle.class, "getWurmid", new Class[] {});
+			getWurmid = ReflectionUtil.getMethod(Vehicle.class, "getWurmid", new Class[]{});
 			embarkString = ReflectionUtil.getField(Vehicle.class, "embarkString");
 			embarksString = ReflectionUtil.getField(Vehicle.class, "embarksString");
 			maxSpeed = ReflectionUtil.getField(Vehicle.class, "maxSpeed");
@@ -83,11 +83,12 @@ public class VehicleFacadeImpl implements VehicleFacade {
 	public void setCreature(boolean b) {
 		v.creature = b;
 	}
-	
+
 	@Override
 	public void setPilotName(String string) {
 		setPrivateField(pilotName, string);
 	}
+
 	@Override
 	public void setEmbarkString(String string) {
 		setPrivateField(embarkString, string);
@@ -98,7 +99,7 @@ public class VehicleFacadeImpl implements VehicleFacade {
 		setPrivateField(embarkString, string);
 	}
 
-	
+
 	@Override
 	public void setName(String name) {
 		v.name = name;
@@ -146,20 +147,21 @@ public class VehicleFacadeImpl implements VehicleFacade {
 	}
 
 	@Override
-	public void  setWindImpact(final byte impact) {
+	public void setWindImpact(final byte impact) {
 		callPrivateMethod(setWindImpact, impact);
-		
+
 	}
+
 	@Override
 	public void setCanHaveEquipment(boolean b) {
 		setPrivateField(canHaveEquipment, b);
 	}
-	
+
 	@Override
 	public Item getItem() throws NoSuchItemException {
 		return Items.getItem(this.getWurmid());
 	}
-	
+
 	@Override
 	public long getWurmid() {
 		return callPrivateMethod(getWurmid);

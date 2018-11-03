@@ -39,15 +39,16 @@ public class KingdomTower {
         builder.material(Materials.MATERIAL_STONE);
         builder.behaviourType(BehaviourList.itemBehaviour);
         ItemTemplate result = builder.build();
-        if (Initiator.towers) { createCreationEntry(result); }
-
+        createCreationEntry(result);
         return result.getTemplateId();
     }
 
     private static void createCreationEntry(ItemTemplate newTower) {
-        AdvancedCreationEntry towerStone = CreationEntryCreator.createAdvancedEntry(1013, 132, 130, newTower.getTemplateId(), false, false, 0.0f, true, true, CreationCategories.TOWERS);
-        towerStone.addRequirement(new CreationRequirement(1, 132, 500, true));
-        towerStone.addRequirement(new CreationRequirement(2, 130, 500, true));
-        towerStone.addRequirement(new CreationRequirement(3, 22, 100, true));
+        if (Initiator.towers) {
+            AdvancedCreationEntry towerStone = CreationEntryCreator.createAdvancedEntry(1013, 132, 130, newTower.getTemplateId(), false, false, 0.0f, true, true, CreationCategories.TOWERS);
+            towerStone.addRequirement(new CreationRequirement(1, 132, 500, true));
+            towerStone.addRequirement(new CreationRequirement(2, 130, 500, true));
+            towerStone.addRequirement(new CreationRequirement(3, 22, 100, true));
+        }
     }
 }

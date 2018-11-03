@@ -20,73 +20,45 @@ import org.gotti.wurmunlimited.modloader.interfaces.WurmServerMod;
 import org.requiem.mods.kingdomitems.util.SeatsFacadeImpl;
 import org.requiem.mods.kingdomitems.util.VehicleFacadeImpl;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  * Adds various kingdom items and a magic carpet.
  */
 public class Initiator implements WurmServerMod, Configurable, ItemTemplatesCreatedListener {
-
     private static final Logger logger;
-    public static boolean   wagons;
-    public static boolean   magicCarpets;
-    public static boolean   towers;
-    public static boolean   flags;
-    public static boolean   tents;
-    public static boolean   pavilions;
-    public static boolean   banners;
-
-    private static float    wagonMaxSpeed;
-    private static float    wagonMaxDepth;
-    private static float    wagonMaxHeightDiff;
-    public static float     wagonDifficulty;
-    private static int      wagonMaxAllowedLoadDistance;
-    private static float    wagonSkillNeeded;
-    public static int       wagonWeightGrams;
-    public static double    wagonMinSkill;
-
-    private static float    carpetMaxSpeed;
-    private static float    carpetMaxDepth;
-    private static float    carpetMaxHeightDiff;
-    public static float     carpetDifficulty;
-    private static float    carpetSkillNeeded;
-    public static int       carpetWeightGrams;
-    public static double    carpetMinSkill;
-
-    private static boolean  debug;
-
-    static{
-        logger = Logger.getLogger(Initiator.class.getName());
-        wagons = false;
-        magicCarpets = false;
-        towers = false;
-        flags = false;
-        tents = false;
-        pavilions = false;
-        banners = false;
-        wagonMaxSpeed = 1.0f;
-        wagonMaxDepth = -0.07f;
-        wagonMaxHeightDiff = 0.07f;
-        wagonDifficulty = 70.0F;
-        wagonMaxAllowedLoadDistance = 4;
-        wagonSkillNeeded = 21.0f;
-        wagonWeightGrams = 240000;
-        wagonMinSkill = 40.0d;
-        carpetMaxSpeed = 2.0f;
-        carpetMaxDepth = 0.07f;
-        carpetMaxHeightDiff = 0.07f;
-        carpetDifficulty = 80.0f;
-        carpetSkillNeeded = 21.0f;
-        carpetWeightGrams = 4000;
-        carpetMinSkill = 40.0d;
-        debug = false;
-    }
+    public static boolean wagons;
+    public static boolean magicCarpets;
+    public static boolean towers;
+    public static boolean flags;
+    public static boolean tents;
+    public static boolean pavilions;
+    public static boolean banners;
+    private static float wagonMaxSpeed;
+    private static float wagonMaxDepth;
+    private static float wagonMaxHeightDiff;
+    public static float wagonDifficulty;
+    private static int wagonMaxAllowedLoadDistance;
+    private static float wagonSkillNeeded;
+    public static int wagonWeightGrams;
+    public static double wagonMinSkill;
+    private static float carpetMaxSpeed;
+    private static float carpetMaxDepth;
+    private static float carpetMaxHeightDiff;
+    public static float carpetDifficulty;
+    private static float carpetSkillNeeded;
+    public static int carpetWeightGrams;
+    public static double carpetMinSkill;
+    private static boolean debug;
 
     @Override
     public void configure(Properties properties) {
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
         wagons = Boolean.valueOf(properties.getProperty("wagons", String.valueOf(Initiator.wagons)));
-        magicCarpets = Boolean.valueOf(properties.getProperty("magicCarpets", String.valueOf(Initiator.magicCarpets)));
+        //magicCarpets = Boolean.valueOf(properties.getProperty("magicCarpets", String.valueOf(Initiator.magicCarpets)));
         flags = Boolean.valueOf(properties.getProperty("flags", String.valueOf(Initiator.flags)));
         towers = Boolean.valueOf(properties.getProperty("towers", String.valueOf(Initiator.towers)));
         tents = Boolean.valueOf(properties.getProperty("tents", String.valueOf(Initiator.tents)));
@@ -100,19 +72,44 @@ public class Initiator implements WurmServerMod, Configurable, ItemTemplatesCrea
         wagonSkillNeeded = Float.parseFloat(properties.getProperty("wagonSkillNeeded", String.valueOf(Initiator.wagonSkillNeeded)));
         wagonMinSkill = Double.parseDouble(properties.getProperty("wagonMinSkill", String.valueOf(Initiator.wagonMinSkill)));
         wagonWeightGrams = Integer.parseInt(properties.getProperty("wagonWeightGrams", String.valueOf(Initiator.wagonWeightGrams)));
-        carpetMaxSpeed = Float.parseFloat(properties.getProperty("carpetMaxSpeed", String.valueOf(Initiator.carpetMaxSpeed)));
-        carpetMaxDepth = Float.parseFloat(properties.getProperty("carpetMaxDepth", String.valueOf(Initiator.carpetMaxDepth)));
-        carpetMaxHeightDiff = Float.parseFloat(properties.getProperty("carpetMaxHeightDiff", String.valueOf(Initiator.carpetMaxHeightDiff)));
-        carpetDifficulty = Float.parseFloat(properties.getProperty("carpetDifficulty", String.valueOf(Initiator.carpetDifficulty)));
-        carpetSkillNeeded = Float.parseFloat(properties.getProperty("carpetSkillNeeded", String.valueOf(Initiator.carpetSkillNeeded)));
-        carpetMinSkill = Double.parseDouble(properties.getProperty("carpetMinSkill", String.valueOf(Initiator.carpetMinSkill)));
-        carpetWeightGrams = Integer.parseInt(properties.getProperty("carpetWeightGrams", String.valueOf(Initiator.carpetWeightGrams)));
+        //carpetMaxSpeed = Float.parseFloat(properties.getProperty("carpetMaxSpeed", String.valueOf(Initiator.carpetMaxSpeed)));
+        //carpetMaxDepth = Float.parseFloat(properties.getProperty("carpetMaxDepth", String.valueOf(Initiator.carpetMaxDepth)));
+        //carpetMaxHeightDiff = Float.parseFloat(properties.getProperty("carpetMaxHeightDiff", String.valueOf(Initiator.carpetMaxHeightDiff)));
+        //carpetDifficulty = Float.parseFloat(properties.getProperty("carpetDifficulty", String.valueOf(Initiator.carpetDifficulty)));
+        //carpetSkillNeeded = Float.parseFloat(properties.getProperty("carpetSkillNeeded", String.valueOf(Initiator.carpetSkillNeeded)));
+        //carpetMinSkill = Double.parseDouble(properties.getProperty("carpetMinSkill", String.valueOf(Initiator.carpetMinSkill)));
+        //carpetWeightGrams = Integer.parseInt(properties.getProperty("carpetWeightGrams", String.valueOf(Initiator.carpetWeightGrams)));
         debug = Boolean.valueOf(properties.getProperty("debug", String.valueOf(debug)));
-
-            registerWagonHook();
-            registerWagonManageHook();
-            registerCarpetHook();
-            //registerCarpetManageHook();
+        debug( "=========================================================================================");
+        if (Initiator.wagons) { debug( "Wagon Crafting: Enabled"); }
+        if (!Initiator.wagons) { debug( "Wagon Crafting: Disabled"); }
+        //if (Initiator.magicCarpets) { debug( "magicCarpets Crafting: Enabled"); }
+        //if (!Initiator.magicCarpets) { debug( "magicCarpets Crafting: Disabled"); }
+        if (Initiator.flags) { debug( "Flag Crafting: Enabled"); }
+        if (!Initiator.flags) { debug( "Flag Crafting: Disabled"); }
+        if (Initiator.towers) { debug( "Tower Crafting: Enabled"); }
+        if (!Initiator.towers) { debug( "Tower Crafting: Disabled"); }
+        if (Initiator.tents) { debug( "Tent Crafting: Enabled"); }
+        if (!Initiator.tents) { debug( "Tent Crafting: Disabled"); }
+        if (Initiator.banners) { debug( "Banner Crafting: Enabled"); }
+        if (!Initiator.banners) { debug( "Banner Crafting: Disabled"); }
+        if (Initiator.pavilions) { debug( "Pavilion Crafting: Enabled"); }
+        if (!Initiator.pavilions) { debug( "Pavilion Crafting: Disabled"); }
+        debug( "wagonMaxSpeed: " + wagonMaxSpeed);
+        debug( "wagonMaxDepth: " + wagonMaxDepth);
+        debug( "wagonMaxHeightDiff: " + wagonMaxHeightDiff);
+        debug( "wagonDifficulty: " + wagonDifficulty);
+        debug( "wagonMaxAllowedLoadDistance: " + wagonMaxAllowedLoadDistance);
+        debug( "wagonSkillNeeded: " + wagonSkillNeeded);
+        debug( "wagonMinSkill: " + wagonMinSkill);
+        debug( "wagonWeightGrams: " + formatter.format(wagonWeightGrams));
+        if (Initiator.debug) { Initiator.logger.log(Level.INFO, "Add Kingdom Items Mod Debugging Messages: Enabled"); }
+        if (!Initiator.debug) { Initiator.logger.log(Level.INFO, "Add Kingdom Items Mod Debugging Messages: Disabled"); }
+        debug( "=========================================================================================");
+        registerWagonHook();
+        registerWagonManageHook();
+        registerCarpetHook();
+        //registerCarpetManageHook();
     }
 
     public static void registerWagonManageHook() {
@@ -146,8 +143,7 @@ public class Initiator implements WurmServerMod, Configurable, ItemTemplatesCrea
                         }
                         return original;
                     });
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             debug("Permission hook for wagon: " + e.toString());
         }
     }
@@ -211,84 +207,85 @@ public class Initiator implements WurmServerMod, Configurable, ItemTemplatesCrea
         }
     }
 
-        public static void registerCarpetManageHook() {
-            try {
-                CtClass[] input = {
-                        HookManager.getInstance().getClassPool().get("com.wurmonline.server.creatures.Creature"),
-                        HookManager.getInstance().getClassPool().get("com.wurmonline.server.items.Item")
-                };
-                CtClass output = HookManager.getInstance().getClassPool().get("java.util.List");
-                HookManager.getInstance().registerHook("com.wurmonline.server.behaviours.VehicleBehaviour", "getVehicleBehaviours",
-                        Descriptor.ofMethod(output, input), () -> (proxy, method, args) -> {
-                            List<ActionEntry> original = (List<ActionEntry>) method.invoke(proxy, args);
-                            Item item = (Item) args[1];
-                            Creature performer = (Creature) args[0];
-                            if (item.mayManage(performer)) {
-                                int itemId = item.getTemplateId();
-                                for (int id : MagicCarpetFactory.carpetList) {
-                                    if (id == itemId) {
-                                        debug("Adding manage permissions");
-                                        original.add(Actions.actionEntrys[Actions.MANAGE_VEHICLE]);
-                                    }
+    public static void registerCarpetManageHook() {
+        try {
+            CtClass[] input = {
+                    HookManager.getInstance().getClassPool().get("com.wurmonline.server.creatures.Creature"),
+                    HookManager.getInstance().getClassPool().get("com.wurmonline.server.items.Item")
+            };
+            CtClass output = HookManager.getInstance().getClassPool().get("java.util.List");
+            HookManager.getInstance().registerHook("com.wurmonline.server.behaviours.VehicleBehaviour", "getVehicleBehaviours",
+                    Descriptor.ofMethod(output, input), () -> (proxy, method, args) -> {
+                        List<ActionEntry> original = (List<ActionEntry>) method.invoke(proxy, args);
+                        Item item = (Item) args[1];
+                        Creature performer = (Creature) args[0];
+                        if (item.mayManage(performer)) {
+                            int itemId = item.getTemplateId();
+                            for (int id : MagicCarpetFactory.carpetList) {
+                                if (id == itemId) {
+                                    debug("Adding manage permissions");
+                                    original.add(Actions.actionEntrys[Actions.MANAGE_VEHICLE]);
                                 }
                             }
-                            if (item.maySeeHistory(performer)) {
-                                int itemId = item.getTemplateId();
-                                for (int id : MagicCarpetFactory.carpetList) {
-                                    if (id == itemId) {
-                                        original.add(new ActionEntry(Actions.SHOW_HISTORY_FOR_OBJECT, "History of Carpet", "viewing"));
-                                    }
+                        }
+                        if (item.maySeeHistory(performer)) {
+                            int itemId = item.getTemplateId();
+                            for (int id : MagicCarpetFactory.carpetList) {
+                                if (id == itemId) {
+                                    original.add(new ActionEntry(Actions.SHOW_HISTORY_FOR_OBJECT, "History of Carpet", "viewing"));
                                 }
                             }
-                            return original;
-                        });
-            }
-            catch (Exception e) {
-                debug("Permission hook for magic carpet: " + e.toString());
-            }
+                        }
+                        return original;
+                    });
+        } catch (Exception e) {
+            debug("Permission hook for magic carpet: " + e.toString());
         }
+    }
 
-        public static void registerCarpetHook() {
-            try {
-                CtClass[] input = {
-                        HookManager.getInstance().getClassPool().get("com.wurmonline.server.items.Item"),
-                        HookManager.getInstance().getClassPool().get("com.wurmonline.server.behaviours.Vehicle")
-                };
-                CtClass output = CtPrimitiveType.voidType;
-                HookManager.getInstance().registerHook("com.wurmonline.server.behaviours.Vehicles", "setSettingsForVehicle",
-                        Descriptor.ofMethod(output, input), () -> (proxy, method, args) -> {
-                            debug("Adding vehicle configuration for magic carpets");
-                            Item item = (Item) args[0];
-                            int templateId = item.getTemplateId();
-                            for (int i: MagicCarpetFactory.carpetList) {
-                                if (i==templateId) {
-                                    Vehicle vehicle = (Vehicle) args[1];
-                                    VehicleFacadeImpl vehfacade = new VehicleFacadeImpl(vehicle);
-                                    vehfacade.createPassengerSeats(0);
-                                    vehfacade.setPilotName("rider");
-                                    vehfacade.setCreature(false);
-                                    vehfacade.setEmbarkString("ride");
-                                    vehfacade.setEmbarksString("rides");
-                                    vehicle.name = item.getName();
-                                    vehicle.setSeatFightMod(0, 0.9f, 0.3f);
-                                    vehicle.setSeatOffset(0, 0.0f, 0.0f, 0.0f, 1.453f);
-                                    vehicle.maxHeightDiff = carpetMaxHeightDiff;
-                                    vehicle.maxDepth = carpetMaxDepth;
-                                    vehicle.skillNeeded = carpetSkillNeeded;
-                                    vehfacade.setMaxSpeed(carpetMaxSpeed);
-                                    vehicle.commandType = 2;
-                                    return null;
-                                }
+    public static void registerCarpetHook() {
+        try {
+            CtClass[] input = {
+                    HookManager.getInstance().getClassPool().get("com.wurmonline.server.items.Item"),
+                    HookManager.getInstance().getClassPool().get("com.wurmonline.server.behaviours.Vehicle")
+            };
+            CtClass output = CtPrimitiveType.voidType;
+            HookManager.getInstance().registerHook("com.wurmonline.server.behaviours.Vehicles", "setSettingsForVehicle",
+                    Descriptor.ofMethod(output, input), () -> (proxy, method, args) -> {
+                        debug("Adding vehicle configuration for magic carpets");
+                        Item item = (Item) args[0];
+                        int templateId = item.getTemplateId();
+                        for (int i : MagicCarpetFactory.carpetList) {
+                            if (i == templateId) {
+                                Vehicle vehicle = (Vehicle) args[1];
+                                VehicleFacadeImpl vehfacade = new VehicleFacadeImpl(vehicle);
+                                vehfacade.createPassengerSeats(0);
+                                vehfacade.setPilotName("rider");
+                                vehfacade.setCreature(false);
+                                vehfacade.setEmbarkString("ride");
+                                vehfacade.setEmbarksString("rides");
+                                vehicle.name = item.getName();
+                                vehicle.setSeatFightMod(0, 0.9f, 0.3f);
+                                vehicle.setSeatOffset(0, 0.0f, 0.0f, 0.0f, 1.453f);
+                                vehicle.maxHeightDiff = carpetMaxHeightDiff;
+                                vehicle.maxDepth = carpetMaxDepth;
+                                vehicle.skillNeeded = carpetSkillNeeded;
+                                vehfacade.setMaxSpeed(carpetMaxSpeed);
+                                vehicle.commandType = 2;
+                                return null;
                             }
-                            return method.invoke(proxy,args);
-                        });
-            } catch (NotFoundException e) {
-                debug("Magic carpet hook: " + e.toString());
-            }
+                        }
+                        return method.invoke(proxy, args);
+                    });
+        } catch (NotFoundException e) {
+            debug("Magic carpet hook: " + e.toString());
         }
+    }
 
     public static void debug(String msg) {
-        if (debug) { logger.info(msg); }
+        if (debug) {
+            logger.info(msg);
+        }
     }
 
     @Override
@@ -303,7 +300,34 @@ public class Initiator implements WurmServerMod, Configurable, ItemTemplatesCrea
     }
 
     public String getVersion() {
-        return "v1.7";
+        return "v1.8";
+    }
+
+    static {
+        logger = Logger.getLogger(Initiator.class.getName());
+        wagons = false;
+        magicCarpets = false;
+        towers = false;
+        flags = false;
+        tents = false;
+        pavilions = false;
+        banners = false;
+        wagonMaxSpeed = 1.0f;
+        wagonMaxDepth = -0.07f;
+        wagonMaxHeightDiff = 0.07f;
+        wagonDifficulty = 70.0F;
+        wagonMaxAllowedLoadDistance = 4;
+        wagonSkillNeeded = 21.0f;
+        wagonWeightGrams = 240000;
+        wagonMinSkill = 40.0d;
+        carpetMaxSpeed = 2.0f;
+        carpetMaxDepth = 0.07f;
+        carpetMaxHeightDiff = 0.07f;
+        carpetDifficulty = 80.0f;
+        carpetSkillNeeded = 21.0f;
+        carpetWeightGrams = 4000;
+        carpetMinSkill = 40.0d;
+        debug = false;
     }
 
 }

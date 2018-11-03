@@ -44,12 +44,11 @@ public class MagicCarpets implements ItemTypes {
                 ITEM_TYPE_NOWORKPARENT,
                 ITEM_TYPE_NORENAME
         });
-
-        builder.imageNumber((short)901);
+        builder.imageNumber((short) 901);
         builder.behaviourType(BehaviourList.vehicleBehaviour);
         builder.combatDamage(0);
         builder.decayTime(9072000L);
-        builder.dimensions(200,150,5);
+        builder.dimensions(200, 150, 5);
         builder.primarySkill(-10);
         builder.modelName(model + ".");
         builder.difficulty(Initiator.carpetDifficulty);
@@ -60,17 +59,17 @@ public class MagicCarpets implements ItemTypes {
         builder.dyeAmountOverrideGrams((short) 0);
         ItemTemplate resultTemplate = builder.build();
         debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; carpet? " + resultTemplate.isVehicle());
-        if (Initiator.magicCarpets) { createCreationEntry(resultTemplate); }
-
+        createCreationEntry(resultTemplate);
         return resultTemplate.getTemplateId();
     }
 
     private static void createCreationEntry(ItemTemplate newCarpet) {
-
-        AdvancedCreationEntry carpet = CreationEntryCreator.createAdvancedEntry(SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, newCarpet.getTemplateId(), false, true, 0.0F, false, false, 0, Initiator.carpetMinSkill, CreationCategories.CARTS);
-        carpet.addRequirement(new CreationRequirement(1, ItemList.clothString, 19, true));
-        carpet.addRequirement(new CreationRequirement(2, ItemList.sheet, 3, true));
-        carpet.addRequirement(new CreationRequirement(3, ItemList.leatherStrip, 4, true));
-        carpet.addRequirement(new CreationRequirement(4, ItemList.sourceSalt, 10, true));
+        if (Initiator.magicCarpets) {
+            AdvancedCreationEntry carpet = CreationEntryCreator.createAdvancedEntry(SkillList.CLOTHTAILORING, ItemList.loom, ItemList.clothString, newCarpet.getTemplateId(), false, true, 0.0F, false, false, 0, Initiator.carpetMinSkill, CreationCategories.CARTS);
+            carpet.addRequirement(new CreationRequirement(1, ItemList.clothString, 19, true));
+            carpet.addRequirement(new CreationRequirement(2, ItemList.sheet, 3, true));
+            carpet.addRequirement(new CreationRequirement(3, ItemList.leatherStrip, 4, true));
+            carpet.addRequirement(new CreationRequirement(4, ItemList.sourceSalt, 10, true));
+        }
     }
 }

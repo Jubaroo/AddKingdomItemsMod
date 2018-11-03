@@ -41,10 +41,13 @@ public class KingdomFlag {
         builder.isTraded(true);
         builder.behaviourType(BehaviourList.itemBehaviour);
         ItemTemplate result = builder.build();
-        if (Initiator.flags) { createCreationEntry(result); }
-
+        createCreationEntry(result);
         return result.getTemplateId();
     }
-    private static void createCreationEntry(ItemTemplate newBanner) { CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(), true, true, 0.0F, false, false, CreationCategories.FLAGS);
+
+    private static void createCreationEntry(ItemTemplate newBanner) {
+        if (Initiator.flags) {
+            CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(), true, true, 0.0F, false, false, CreationCategories.FLAGS);
+        }
     }
 }

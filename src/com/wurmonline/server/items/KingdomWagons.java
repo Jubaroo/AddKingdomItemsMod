@@ -66,19 +66,19 @@ public class KingdomWagons implements ItemTypes {
         builder.containerSize(200, 260, 400);
         ItemTemplate resultTemplate = builder.build();
         debug(name + "; Template ID: " + resultTemplate.getTemplateId() + "; vehicle? " + resultTemplate.isVehicle());
-        if (Initiator.wagons) {
-            createCreationEntry(resultTemplate);
-        }
+        createCreationEntry(resultTemplate);
         return resultTemplate.getTemplateId();
     }
 
     private static void createCreationEntry(ItemTemplate newWwagon) {
-        AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, newWwagon.getTemplateId(), false, false, 0.0F, true, true, 0, wagonMinSkill, CreationCategories.CARTS);// min skill 40.0D
-        wagon.addRequirement(new CreationRequirement(1, ItemList.wheelAxleSmall, 1, true));
-        wagon.addRequirement(new CreationRequirement(2, ItemList.plank, 20, true));
-        wagon.addRequirement(new CreationRequirement(3, ItemList.shaft, 4, true));
-        wagon.addRequirement(new CreationRequirement(4, ItemList.nailsIronSmall, 10, true));
-        wagon.addRequirement(new CreationRequirement(5, ItemList.yoke, 2, true));
-        wagon.addRequirement(new CreationRequirement(6, ItemList.sheet, 2, true));
+        if (Initiator.wagons) {
+            AdvancedCreationEntry wagon = CreationEntryCreator.createAdvancedEntry(SkillList.CARPENTRY_FINE, ItemList.plank, ItemList.wheelAxleSmall, newWwagon.getTemplateId(), false, false, 0.0F, true, true, 0, wagonMinSkill, CreationCategories.CARTS);// min skill 40.0D
+            wagon.addRequirement(new CreationRequirement(1, ItemList.wheelAxleSmall, 1, true));
+            wagon.addRequirement(new CreationRequirement(2, ItemList.plank, 20, true));
+            wagon.addRequirement(new CreationRequirement(3, ItemList.shaft, 4, true));
+            wagon.addRequirement(new CreationRequirement(4, ItemList.nailsIronSmall, 10, true));
+            wagon.addRequirement(new CreationRequirement(5, ItemList.yoke, 2, true));
+            wagon.addRequirement(new CreationRequirement(6, ItemList.sheet, 2, true));
+        }
     }
 }

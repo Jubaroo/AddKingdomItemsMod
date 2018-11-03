@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3a5446b-4107-4c0f-9a5f-98c8da522584" name="Default" comment="">
+    <list default="true" id="a3a5446b-4107-4c0f-9a5f-98c8da522584" name="Default" comment="Fixed crafting toggle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AddKingdomItemsMod/com/wurmonline/server/items/KingdomWagons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AddKingdomItemsMod/com/wurmonline/server/items/KingdomWagons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AddKingdomItemsMod/org/requiem/mods/kingdomitems/Initiator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AddKingdomItemsMod/org/requiem/mods/kingdomitems/Initiator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomBanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomBanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomFlag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomFlag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomMilitaryTent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomMilitaryTent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomPavilion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomPavilion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomWagons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomWagons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wurmonline/server/items/MagicCarpets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wurmonline/server/items/MagicCarpets.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Initiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Initiator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacadeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacadeImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,40 +72,65 @@
     <session id="-1163835246">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="18" />
+          <entry key="properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="18" />
+          <entry key="Properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="java" value="256" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="256" />
+          <entry key="PLAIN_TEXT" value="21" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Initiator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-347">
-              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+            <state relative-caret-position="510">
+              <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/MagicCarpets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomWagons.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -121,6 +158,7 @@
       <find>ArmourTypes.ARMOUR_NONE</find>
       <find>yval</find>
       <find>org.takino.</find>
+      <find>Initiator.logger.log(Level.INFO,</find>
     </findStrings>
     <replaceStrings>
       <replace>carpet</replace>
@@ -129,6 +167,7 @@
       <replace>Initiator</replace>
       <replace>ArmourTemplate.ARMOUR_TYPE_NONE</replace>
       <replace>org.kingdom.</replace>
+      <replace>debug(</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -141,13 +180,7 @@
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/factories/Constants.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/AddKingdomItems.java" />
-        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/MagicCarpets.java" />
         <option value="$PROJECT_DIR$/AddKingdomItems.properties" />
-        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomBanner.java" />
-        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomTower.java" />
-        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomMilitaryTent.java" />
-        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomPavilion.java" />
-        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomFlag.java" />
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/factories/BannerFactory.java" />
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/factories/FlagFactory.java" />
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/factories/MagicCarpetFactory.java" />
@@ -155,13 +188,19 @@
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/factories/PavilionFactory.java" />
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/factories/TowerFactory.java" />
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/factories/WagonFactory.java" />
-        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Constants.java" />
-        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacade.java" />
-        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacadeImpl.java" />
-        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacade.java" />
-        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacadeImpl.java" />
-        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Initiator.java" />
         <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomWagons.java" />
+        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomTower.java" />
+        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomPavilion.java" />
+        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomMilitaryTent.java" />
+        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomFlag.java" />
+        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomBanner.java" />
+        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacade.java" />
+        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacade.java" />
+        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Constants.java" />
+        <option value="$PROJECT_DIR$/src/com/wurmonline/server/items/MagicCarpets.java" />
+        <option value="$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Initiator.java" />
       </list>
     </option>
   </component>
@@ -171,11 +210,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="685" />
-    <option name="y" value="55" />
-    <option name="width" value="1120" />
-    <option name="height" value="795" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -201,7 +239,20 @@
               <item name="AddKingdomItemsMod" type="b2602c69:ProjectViewProjectNode" />
               <item name="AddKingdomItemsMod" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AddKingdomItemsMod" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AddKingdomItemsMod" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kingdomitems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AddKingdomItemsMod" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AddKingdomItemsMod" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="kingdomitems" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -212,7 +263,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541198853404" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541281017584" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -315,14 +366,21 @@
       <option name="project" value="LOCAL" />
       <updated>1526605600842</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed crafting toggle">
+      <created>1541198894601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541198894601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20067114" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21140939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -342,12 +400,12 @@
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3295302" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.3295302" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24966443" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
@@ -356,14 +414,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Added Vehicle and Seat facade to get around protected class files. Added magic carpet vehicle to see if player would like the idea expanded upon." />
     <MESSAGE value="Added magic carpet" />
     <MESSAGE value="Added missing magic carpet config line" />
     <MESSAGE value="Fixed creation category issue" />
     <MESSAGE value="Fixed loom being used while making the magic carpet. Added the ability to dye the wagons." />
     <MESSAGE value="Updated version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated version number" />
+    <MESSAGE value="Fixed crafting toggle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed crafting toggle" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -387,48 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="29" column="60" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AddKingdomItems.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomTower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomMilitaryTent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomPavilion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomFlag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomBanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -481,59 +498,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/MagicCarpets.java">
+    <entry file="file://$PROJECT_DIR$/AddKingdomItems.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="69" column="170" lean-forward="true" selection-start-line="69" selection-start-column="170" selection-end-line="69" selection-end-column="170" />
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacade.java">
+    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomTower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacadeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacadeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="405">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="2329">
+          <caret line="137" column="1" selection-start-line="137" selection-start-column="1" selection-end-line="137" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomPavilion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomMilitaryTent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomFlag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomBanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/VehicleFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/util/SeatsFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/KingdomWagons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="76" column="31" lean-forward="true" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wurmonline/server/items/MagicCarpets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/requiem/mods/kingdomitems/Initiator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-347">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        <state relative-caret-position="510">
+          <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
         </state>
       </provider>
     </entry>

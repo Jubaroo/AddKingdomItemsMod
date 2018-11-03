@@ -42,16 +42,18 @@ public class KingdomMilitaryTent {
         builder.behaviourType(BehaviourList.itemBehaviour);
         builder.containerSize(100, 200, 201);
         ItemTemplate result = builder.build();
-        if (Initiator.tents) { createCreationEntry(result); }
+        createCreationEntry(result);
 
         return result.getTemplateId();
     }
 
     private static void createCreationEntry(ItemTemplate newTent) {
-        AdvancedCreationEntry tentMilitary = CreationEntryCreator.createAdvancedEntry(10044, 23, 213, newTent.getTemplateId(), false, false, 0.0f, true, true, CreationCategories.TENTS);
-        tentMilitary.addRequirement(new CreationRequirement(1, 23, 10, true));
-        tentMilitary.addRequirement(new CreationRequirement(2, 213, 12, true));
-        tentMilitary.addRequirement(new CreationRequirement(3, 559, 10, true));
-        tentMilitary.addRequirement(new CreationRequirement(4, 561, 10, true));
+        if (Initiator.tents) {
+            AdvancedCreationEntry tentMilitary = CreationEntryCreator.createAdvancedEntry(10044, 23, 213, newTent.getTemplateId(), false, false, 0.0f, true, true, CreationCategories.TENTS);
+            tentMilitary.addRequirement(new CreationRequirement(1, 23, 10, true));
+            tentMilitary.addRequirement(new CreationRequirement(2, 213, 12, true));
+            tentMilitary.addRequirement(new CreationRequirement(3, 559, 10, true));
+            tentMilitary.addRequirement(new CreationRequirement(4, 561, 10, true));
+        }
     }
 }

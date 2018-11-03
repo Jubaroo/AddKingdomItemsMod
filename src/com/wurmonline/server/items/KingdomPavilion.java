@@ -25,7 +25,7 @@ public class KingdomPavilion {
 
     private static int createItem(String model, String name) throws IOException {
         ItemTemplateBuilder builder = new ItemTemplateBuilder("org.kingdom.pavilion." + name);
-        builder.name(name + " pavilion", name + " pavilions", "A pleasant open air tent designed for various kinds of "+name+" gatherings.");
+        builder.name(name + " pavilion", name + " pavilions", "A pleasant open air tent designed for various kinds of " + name + " gatherings.");
         builder.descriptions("excellent", "good", "ok", "poor");
         builder.itemTypes(new short[]{24, 47, 109, 52, 86, 51, 98, 180, 182});
         builder.imageNumber((short) 640);
@@ -42,16 +42,17 @@ public class KingdomPavilion {
         builder.behaviourType(BehaviourList.itemBehaviour);
         builder.containerSize(100, 200, 201);
         ItemTemplate result = builder.build();
-        if (Initiator.pavilions) { createCreationEntry(result); }
-
+        createCreationEntry(result);
         return result.getTemplateId();
     }
 
     private static void createCreationEntry(ItemTemplate newPavilion) {
-        AdvancedCreationEntry pavilion = CreationEntryCreator.createAdvancedEntry(10044, 23, 213, newPavilion.getTemplateId(), false, false, 0.0f, true, true, CreationCategories.TENTS);
-        pavilion.addRequirement(new CreationRequirement(1, 23, 10, true));
-        pavilion.addRequirement(new CreationRequirement(2, 213, 6, true));
-        pavilion.addRequirement(new CreationRequirement(3, 559, 10, true));
-        pavilion.addRequirement(new CreationRequirement(4, 561, 10, true));
+        if (Initiator.pavilions) {
+            AdvancedCreationEntry pavilion = CreationEntryCreator.createAdvancedEntry(10044, 23, 213, newPavilion.getTemplateId(), false, false, 0.0f, true, true, CreationCategories.TENTS);
+            pavilion.addRequirement(new CreationRequirement(1, 23, 10, true));
+            pavilion.addRequirement(new CreationRequirement(2, 213, 6, true));
+            pavilion.addRequirement(new CreationRequirement(3, 559, 10, true));
+            pavilion.addRequirement(new CreationRequirement(4, 561, 10, true));
+        }
     }
 }

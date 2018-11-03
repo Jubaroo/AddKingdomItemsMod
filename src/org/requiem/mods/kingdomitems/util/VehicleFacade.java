@@ -21,11 +21,11 @@ public interface VehicleFacade {
 	void setCreature(boolean b);
 
 	void setPilotName(String string);
-	
+
 	void setEmbarkString(String string);
 
-	void setEmbarksString(String string);		
-		
+	void setEmbarksString(String string);
+
 	void setName(String name);
 
 	void setMaxDepth(float f);
@@ -44,7 +44,7 @@ public interface VehicleFacade {
 
 	void setMaxSpeed(float f);
 
-    void setWindImpact(final byte impact);
+	void setWindImpact(final byte impact);
 
 	void setCanHaveEquipment(boolean b);
 

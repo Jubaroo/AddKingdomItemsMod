@@ -27,12 +27,12 @@ public class KingdomBanner {
     private static int createItem(String model, String name, boolean tall) throws IOException {
         String itemId = "org.kingdom.banner.";
         if (tall) {
-            itemId+="tall.";
+            itemId += "tall.";
         }
         ItemTemplateBuilder builder = new ItemTemplateBuilder(itemId + name);
-        String add="";
+        String add = "";
         if (tall) {
-            add=" tall";
+            add = " tall";
         }
         builder.name(name + add + " banner", name + add + " banners", "An elegant symbol of allegiance and faith towards " + name);
         builder.descriptions("excellent", "good", "ok", "poor");
@@ -50,11 +50,13 @@ public class KingdomBanner {
         builder.isTraded(true);
         builder.behaviourType(BehaviourList.itemBehaviour);
         ItemTemplate result = builder.build();
-        if (Initiator.banners) { createCreationEntry(result); }
-
+        createCreationEntry(result);
         return result.getTemplateId();
     }
 
-    private static void createCreationEntry(ItemTemplate newBanner) { CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(), true, true, 0.0F, false, false, CreationCategories.FLAGS);
+    private static void createCreationEntry(ItemTemplate newBanner) {
+        if (Initiator.banners) {
+            CreationEntryCreator.createSimpleEntry(10016, 213, 23, newBanner.getTemplateId(), true, true, 0.0F, false, false, CreationCategories.FLAGS);
+        }
     }
 }
